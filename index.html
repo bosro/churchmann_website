@@ -1,0 +1,1313 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Churchman - Multipurpose Church Management Solutions</title>
+
+  <!-- NEW: Favicons / touch icons (use absolute URL when live) -->
+  <link rel="icon" type="image/png" href="assets/images/logoo-1.png" />
+  <!-- <link rel="apple-touch-icon" href="assets/images/LOGGO1.png" /> -->
+  <meta name="application-name" content="Churchman" />
+
+  <!-- NEW: Open Graph (social) image - replace with absolute public URL when deployed -->
+  <meta property="og:title" content="Churchman - Multipurpose Church Management Solutions" />
+  <meta property="og:site_name" content="Churchman" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/LOGGO1.png" />
+  <meta property="og:image:alt" content="Churchman logo" />
+
+  <!-- NEW: Structured data (Organization + WebSite) - replace logo URL with the final absolute URL accessible on the web -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://example.com/#organization",
+          "name": "Churchman",
+          "url": "https://example.com/",
+          "logo": "https://example.com/assets/images/LOGGO1.png",
+          "sameAs": []
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://example.com/#website",
+          "url": "https://example.com/",
+          "name": "Churchman",
+          "publisher": {
+            "@id": "https://example.com/#organization"
+          }
+        }
+      ]
+    }
+    </script>
+
+  <!-- ...existing code... -->
+  <link rel="stylesheet" href="src/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="src/output.css" />
+  <link rel="stylesheet" href="src/style.css" />
+  <link rel="stylesheet" href="src/aos.css" />
+</head>
+
+<body>
+  <header class="bg-white fixed w-full z-50 sticky-header transition-all duration-300 shadow-primary-shadow-3">
+    <div class="container my-5">
+      <div class="hidden lg:flex h-fit items-center justify-between xl:gap-[140px]">
+        <div class="flex h-fit items-center justify-between w-fit">
+          <div class="">
+            <a href="#hero">
+              <img src="assets/images/LOGGO1.png" style="width: 100px" alt="logo" />
+            </a>
+
+            <!-- NEW: small upload input to pick a logo file (for updating favicon/meta locally).
+                   Note: to make the logo appear in search results you must upload the file to your public server
+                   and update the JSON-LD logo URL above to the absolute public URL. -->
+            <!-- <div style="display:inline-block; margin-left:12px;">
+                <label for="siteLogoUpload" style="font-size:12px; color:#333; cursor:pointer;">
+                  Upload logo
+                  <input id="siteLogoUpload" type="file" accept="image/*" style="display:none" />
+                </label>
+              </div> -->
+          </div>
+        </div>
+
+        <div class="">
+          <ul class="flex items-center gap-10">
+            <li class="">
+              <a href="#hero"
+                class="text-base font-medium leading-5 text-black_21 flex items-center gap-2.5 hover:text-[#FF455B] transition-all duration-300">
+                Home
+              </a>
+            </li>
+
+            <li>
+              <a href="#about"
+                class="text-base font-medium leading-5 text-black_21 hover:text-[#FF455B] transition-all duration-300">
+                About
+              </a>
+            </li>
+
+            <li class="group">
+              <a href="#features"
+                class="text-base font-medium leading-5 text-black_21 hover:text-[#FF455B] transition-all duration-300">
+                Features
+              </a>
+            </li>
+
+            <li class="group">
+              <a href="#pricing"
+                class="text-base font-medium leading-5 text-black_21 hover:text-[#FF455B] transition-all duration-300">
+                Pricing
+              </a>
+            </li>
+
+            <li>
+              <a href="#contact"
+                class="text-base font-medium leading-5 text-black_21 hover:text-[#FF455B] transition-all duration-300">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div class="flex h-fit items-center gap-5">
+            <a href="https://web.churchmann.org/auth/signup" class="btn-one group">
+              <p class="text-black_21 group-hover:!text-white">
+                Sign Up Free
+                <span>
+                  <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="group-hover:!fill-white"
+                      d="M4.25696 1.01172C4.33508 0.914062 4.49133 0.914062 4.58899 1.01172L8.67102 5.09375C8.76868 5.19141 8.76868 5.32812 8.67102 5.42578L4.58899 9.50781C4.49133 9.60547 4.33508 9.60547 4.25696 9.50781L3.86633 9.13672C3.76868 9.03906 3.76868 8.88281 3.86633 8.80469L6.89368 5.75781H0.233521C0.0968018 5.75781 -0.000854492 5.66016 -0.000854492 5.52344V4.97656C-0.000854492 4.85938 0.0968018 4.74219 0.233521 4.74219H6.89368L3.86633 1.71484C3.76868 1.63672 3.76868 1.48047 3.86633 1.38281L4.25696 1.01172Z" />
+                  </svg>
+                </span>
+              </p>
+            </a>
+
+            <a href="https://web.churchmann.org" class="btn-two group hover:text-black_21">
+              <p class="">
+                Sign In
+                <span>
+                  <svg class="group-hover:text-black_21" width="9" height="10" viewBox="0 0 9 10" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M4.25696 1.01172C4.33508 0.914062 4.49133 0.914062 4.58899 1.01172L8.67102 5.09375C8.76868 5.19141 8.76868 5.32812 8.67102 5.42578L4.58899 9.50781C4.49133 9.60547 4.33508 9.60547 4.25696 9.50781L3.86633 9.13672C3.76868 9.03906 3.76868 8.88281 3.86633 8.80469L6.89368 5.75781H0.233521C0.0968018 5.75781 -0.000854492 5.66016 -0.000854492 5.52344V4.97656C-0.000854492 4.85938 0.0968018 4.74219 0.233521 4.74219H6.89368L3.86633 1.71484C3.76868 1.63672 3.76868 1.48047 3.86633 1.38281L4.25696 1.01172Z"
+                      fill="currentColor" />
+                  </svg>
+                </span>
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <header class="relative flex flex-col lg:hidden">
+    <div class="fixed left-0 top-0 z-50 flex h-16 w-full items-center justify-between bg-blue-dark_medical px-2.5">
+      <a href="#hero" aria-label="logo">
+        <img src="assets/images/logos/logoo.png" style="width: 100px; height: auto;" alt="logo" />
+      </a>
+      <button aria-label="mobile-Menu" class="text-48 toggle_nav_menu h-6 w-6 text-white" id="mobile_nav_toggle_menu">
+        <svg class="pointer-events-none transition-all duration-300" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512">
+          <path
+            d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+            fill="currentColor" />
+        </svg>
+        <svg class="pointer-events-none hidden transition-all duration-300" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 384 512">
+          <path
+            d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+            fill="currentColor" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="transition-all duration-300" id="mobile-nav-section">
+      <div class="mobile-overlay fixed z-40 h-screen w-full bg-black/80 transition-all delay-150 duration-300"
+        id="mobile-nav-div-overlay"></div>
+      <div
+        class="mobile-menu-div fixed top-16 z-50 h-screen w-full max-w-[250px] overflow-y-scroll bg-blue-dark_medical transition-all delay-0 duration-300"
+        id="mobile-nav-div">
+        <div class="flex flex-col gap-28 pl-5 pt-5">
+          <ul class="font-inter flex flex-col gap-5 text-base font-medium leading-5 text-paragraph">
+            <li
+              class="flex items-center gap-2.5 text-base font-medium leading-5 text-white transition-all duration-300 hover:text-sf-blue">
+              <a href="#hero">Home</a>
+            </li>
+            <li
+              class="flex items-center gap-2.5 text-base font-medium leading-5 text-white transition-all duration-300 hover:text-sf-blue">
+              <a href="#about">About</a>
+            </li>
+            <li
+              class="flex items-center gap-2.5 text-base font-medium leading-5 text-white transition-all duration-300 hover:text-sf-blue">
+              <a href="#features">Features</a>
+            </li>
+            <li
+              class="flex items-center gap-2.5 text-base font-medium leading-5 text-white transition-all duration-300 hover:text-sf-blue">
+              <a href="#pricing">Pricing</a>
+            </li>
+            <li
+              class="flex items-center gap-2.5 text-base font-medium leading-5 text-white transition-all duration-300 hover:text-sf-blue">
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="mt-5 flex flex-col gap-5 pl-5 pr-5">
+          <a href="https://web.churchmann.org" class="btn-one">
+            <p class="">
+              Log In
+              <span>
+                <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M4.25696 1.01172C4.33508 0.914062 4.49133 0.914062 4.58899 1.01172L8.67102 5.09375C8.76868 5.19141 8.76868 5.32812 8.67102 5.42578L4.58899 9.50781C4.49133 9.60547 4.33508 9.60547 4.25696 9.50781L3.86633 9.13672C3.76868 9.03906 3.76868 8.88281 3.86633 8.80469L6.89368 5.75781H0.233521C0.0968018 5.75781 -0.000854492 5.66016 -0.000854492 5.52344V4.97656C-0.000854492 4.85938 0.0968018 4.74219 0.233521 4.74219H6.89368L3.86633 1.71484C3.76868 1.63672 3.76868 1.48047 3.86633 1.38281L4.25696 1.01172Z"
+                    fill="white" />
+                </svg>
+              </span>
+            </p>
+          </a>
+
+          <a href="https://web.churchmann.org/auth/signup" class="btn-two !w-full">
+            <p class="">
+              Sign Up Free
+              <span>
+                <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M4.25696 1.01172C4.33508 0.914062 4.49133 0.914062 4.58899 1.01172L8.67102 5.09375C8.76868 5.19141 8.76868 5.32812 8.67102 5.42578L4.58899 9.50781C4.49133 9.60547 4.33508 9.60547 4.25696 9.50781L3.86633 9.13672C3.76868 9.03906 3.76868 8.88281 3.86633 8.80469L6.89368 5.75781H0.233521C0.0968018 5.75781 -0.000854492 5.66016 -0.000854492 5.52344V4.97656C-0.000854492 4.85938 0.0968018 4.74219 0.233521 4.74219H6.89368L3.86633 1.71484C3.76868 1.63672 3.76868 1.48047 3.86633 1.38281L4.25696 1.01172Z"
+                    fill="white" />
+                </svg>
+              </span>
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero section -->
+  <section id="hero" class="relative flex justify-center max-w-full overflow-hidden">
+    <div class="container pt-[85px] lg:pt-[120px] xl:pt-[180px] pb-[50px] xl:pb-[130px] relative z-10">
+      <!-- <div
+        class="text-[#FF455B] p-[1px] mx-auto w-fit text-lg font-semibold relative after:px-5 after:py-3 after:bg-white after:block after:content-['Church_Management_Platform']"
+        style="
+              background: linear-gradient(180deg, #ff455b 0%, #7109f9 100%);
+            "></div> -->
+      <h1
+        class="text-center mt-5 text-[34px] md:text-[60px] lg:text-[90px] font-semibold md:leading-[70px] lg:leading-[100px] md:-tracking-[4px] text-white lg:text-black"
+        style="color: black;">
+        The All-in-One Platform to <br />
+        Grow Your Church
+      </h1>
+      <p class="text-white lg:text-black md:text-paragraph text-center pt-7 text-xl">
+        Welcome to Churchman, your complete solution for managing members,
+        giving, events, and ministry<br />
+        with ease — so your team can focus on what matters most: your
+        congregation.
+      </p>
+      <div class="flex flex-col md:flex-row w-fit mx-auto gap-5 mt-12">
+        <button class="gr-button">
+          <a href="https://web.churchmann.org" class="relative z-10 text-base font-medium text-white">Get Started
+            Now</a>
+          <svg class="relative z-10" width="11" height="11" viewBox="0 0 11 11" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M5.10938 0.414062C5.20312 0.296875 5.39062 0.296875 5.50781 0.414062L10.4062 5.3125C10.5234 5.42969 10.5234 5.59375 10.4062 5.71094L5.50781 10.6094C5.39062 10.7266 5.20312 10.7266 5.10938 10.6094L4.64062 10.1641C4.52344 10.0469 4.52344 9.85938 4.64062 9.76562L8.27344 6.10938H0.28125C0.117188 6.10938 0 5.99219 0 5.82812V5.17188C0 5.03125 0.117188 4.89062 0.28125 4.89062H8.27344L4.64062 1.25781C4.52344 1.16406 4.52344 0.976562 4.64062 0.859375L5.10938 0.414062Z"
+              fill="white" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex justify-center items-center" id="hero-banner">
+        <img src="assets/images/herodash.png" alt="" class="relative z-10 pt-12 img" />
+      </div>
+    </div>
+    <div
+      class="w-[892px] max-w-1/2 aspect-square rounded-full h-fit absolute -left-[446px] -z-50 top-[436px] rotate-360">
+    </div>
+    <div
+      class="w-[892px] max-w-1/2 aspect-square rounded-full h-fit absolute -right-[446px] -z-50 bottom-20 rotate-360">
+    </div>
+  </section>
+
+  <!-- Benefit -->
+  <section id="about" class="pt-14 lg:pt-[130px] pb-14 lg:pb-[130px] bg-white">
+    <div class="container">
+      <div class="grid grid-cols-1">
+        <div class="lg:px-[260px]">
+          <span class="text-[#FF455B] text-xl text-center font-semibold pb-4 block" data-aos="fade-up"
+            data-aos-delay="100">Why Churchman</span>
+          <h2 class="text-black_21 text-center font-semibold text-2xl lg:text-5xl leading-8 lg:leading-[61px]"
+            data-aos="fade-up" data-aos-delay="200">
+            Empowering Churches to Thrive with Smarter Management
+          </h2>
+        </div>
+      </div>
+
+      <div id="features" class="grid md:grid-cols-2 lg:grid-cols-3 gap-[30px] mt-10">
+        <div class="p-5 lg:px-10 lg:py-10 bg-white shadow-primary-shadow-3 group hover:bg-hero-pattern"
+          data-aos="fade-up" data-aos-delay="300">
+          <span>
+            <svg class="text-[#FF455B] group-hover:text-white" width="43" height="46" viewBox="0 0 43 46" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M39.957 8.00781C41.5391 8.71094 42.5938 10.2051 42.5938 11.875C42.5938 31.3867 30.6406 42.1973 23.082 45.3613C22.0273 45.8008 20.8848 45.8008 19.8301 45.3613C10.4258 41.4062 0.40625 29.3652 0.40625 11.875C0.40625 10.2051 1.37305 8.71094 2.95508 8.00781L19.8301 0.976562C20.3574 0.800781 20.8848 0.712891 21.5 0.712891C22.0273 0.712891 22.5547 0.800781 23.082 0.976562L39.957 8.00781ZM22.0273 42.7246C30.6406 39.2969 39.7812 27.3438 39.6934 11.875C39.7812 11.3477 39.4297 10.8203 38.9023 10.6445L22.0273 3.61328C21.6758 3.4375 21.2363 3.4375 20.8848 3.61328L4.00977 10.6445C3.48242 10.8203 3.21875 11.3477 3.21875 11.875C3.21875 27.3438 12.3594 39.2969 20.8848 42.7246C21.2363 42.9004 21.6758 42.9004 22.0273 42.7246ZM33.9805 14.1602L34.6836 14.9512C35.123 15.3906 35.123 16.0059 34.6836 16.4453L18.8633 32.1777C18.4238 32.5293 17.8086 32.5293 17.3691 32.1777L9.81055 24.5312C9.37109 24.0918 9.37109 23.4766 9.81055 23.0371L10.6016 22.334C10.9531 21.8945 11.6562 21.8945 12.0957 22.334L18.1602 28.3984L32.4863 14.1602C32.9258 13.8086 33.541 13.8086 33.9805 14.1602Z"
+                fill="currentColor" />
+            </svg>
+          </span>
+
+          <h3
+            class="font-semibold text-xl text-black_21 pt-3 lg:pt-7 transition-all duration-300 group-hover:text-white">
+            Centralized Member Database
+          </h3>
+
+          <p
+            class="w-full text-paragraph text-lg leading-8 mt-2 lg:mt-6 transition-all duration-300 group-hover:text-white">
+            Store and access every member's profile, family details,
+            attendance history, and pastoral notes in one secure place.
+          </p>
+
+          <a href="#"
+            class="text-base font-medium leading-5 text-paragraph flex items-center gap-2 transition-all duration-300 group-hover:text-white group mt-2 lg:mt-5">
+            Learn More
+            <span class="block">
+              <svg class="fill-current text-paragraph transition-all group-hover:text-white duration-300" width="13"
+                height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M5.96094 0.816406C6.07031 0.679688 6.28906 0.679688 6.42578 0.816406L12.1406 6.53125C12.2773 6.66797 12.2773 6.85938 12.1406 6.99609L6.42578 12.7109C6.28906 12.8477 6.07031 12.8477 5.96094 12.7109L5.41406 12.1914C5.27734 12.0547 5.27734 11.8359 5.41406 11.7266L9.65234 7.46094H0.328125C0.136719 7.46094 0 7.32422 0 7.13281V6.36719C0 6.20312 0.136719 6.03906 0.328125 6.03906H9.65234L5.41406 1.80078C5.27734 1.69141 5.27734 1.47266 5.41406 1.33594L5.96094 0.816406Z">
+                </path>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+        <div class="p-5 lg:px-10 lg:py-10 bg-white shadow-primary-shadow-3 group hover:bg-hero-pattern"
+          data-aos="fade-up" data-aos-delay="400">
+          <span>
+            <svg class="text-[#FF455B] group-hover:text-white" width="44" height="44" viewBox="0 0 44 44" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M21.3848 20.8066C22.5273 20.4551 23.6699 21.5977 23.3184 22.7402L17.7812 42.1641C17.6055 42.8672 16.9023 43.2188 16.2871 43.2188C15.7598 43.2188 15.1445 42.9551 14.8809 42.3398L12.5957 37.5059L7.23438 42.8672C6.70703 43.3945 6.00391 43.6582 5.21289 43.6582C4.50977 43.6582 3.80664 43.3945 3.2793 42.8672L1.25781 40.8457C0.203125 39.791 0.203125 37.9453 1.25781 36.8906L6.61914 31.5293L1.78516 29.2441C0.466797 28.6289 0.642578 26.6953 1.96094 26.3438L21.3848 20.8066ZM16.0234 38.209L19.9785 24.1465L5.91602 28.1016L11.3652 30.7383L3.2793 38.9121L5.21289 40.8457L13.3867 32.7598L16.0234 38.209ZM29.0312 22.125C29.0312 25.1133 27.0977 27.6621 24.5488 28.7168C25.8672 23.8828 26.2188 23.1797 26.2188 22.125C26.2188 19.8398 24.2852 17.9062 22 17.9062C20.9453 17.9062 20.2422 18.2578 15.4082 19.5762C16.4629 17.0273 19.0117 15.0938 22 15.0938C25.8672 15.0938 29.0312 18.2578 29.0312 22.125ZM22.2637 36.5391L23.1426 33.6387C28.9434 33.0234 33.6016 28.1895 33.6016 22.125C33.6016 15.7969 28.3281 10.5234 22 10.5234C15.9355 10.5234 11.1016 15.1816 10.4863 20.9824L7.58594 21.8613C7.76172 14.0391 14.0898 7.71094 22 7.71094C29.9102 7.71094 36.4141 14.2148 36.4141 22.125C36.4141 30.0352 30.0859 36.3633 22.2637 36.5391ZM22 0.328125C33.9531 0.328125 43.7969 10.1719 43.7969 22.125C43.7969 34.166 33.9531 43.9219 22 43.9219C21.2969 43.9219 20.6816 43.9219 20.0664 43.834C20.2422 43.5703 20.418 43.2188 20.5059 42.8672L21.0332 41.1094C21.2969 41.1094 21.6484 41.1094 22 41.1094C32.459 41.1094 40.9844 32.6719 40.9844 22.125C40.9844 11.666 32.459 3.14062 22 3.14062C11.4531 3.14062 3.01562 11.666 3.01562 22.125C3.01562 22.4766 3.01562 22.8281 3.01562 23.0918L1.25781 23.6191C0.90625 23.707 0.554688 23.8828 0.291016 24.0586C0.203125 23.4434 0.203125 22.8281 0.203125 22.125C0.203125 10.1719 9.95898 0.328125 22 0.328125Z"
+                fill="currentColor" />
+            </svg>
+          </span>
+
+          <h3
+            class="font-semibold text-xl text-black_21 pt-3 lg:pt-7 transition-all duration-300 group-hover:text-white">
+            Online Giving & Tithing
+          </h3>
+
+          <p
+            class="w-full text-paragraph text-lg leading-8 mt-2 lg:mt-6 transition-all duration-300 group-hover:text-white">
+            Accept one-time and recurring donations online, track pledges,
+            and generate tax-giving statements automatically.
+          </p>
+
+          <a href="#"
+            class="text-base font-medium leading-5 text-paragraph flex items-center gap-2 transition-all duration-300 group-hover:text-white group mt-2 lg:mt-5">
+            Learn More
+            <span class="block">
+              <svg class="fill-current text-paragraph transition-all group-hover:text-white duration-300" width="13"
+                height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M5.96094 0.816406C6.07031 0.679688 6.28906 0.679688 6.42578 0.816406L12.1406 6.53125C12.2773 6.66797 12.2773 6.85938 12.1406 6.99609L6.42578 12.7109C6.28906 12.8477 6.07031 12.8477 5.96094 12.7109L5.41406 12.1914C5.27734 12.0547 5.27734 11.8359 5.41406 11.7266L9.65234 7.46094H0.328125C0.136719 7.46094 0 7.32422 0 7.13281V6.36719C0 6.20312 0.136719 6.03906 0.328125 6.03906H9.65234L5.41406 1.80078C5.27734 1.69141 5.27734 1.47266 5.41406 1.33594L5.96094 0.816406Z">
+                </path>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+        <div class="p-5 lg:px-10 lg:py-10 bg-white shadow-primary-shadow-3 group hover:bg-hero-pattern"
+          data-aos="fade-up" data-aos-delay="500">
+          <span>
+            <svg class="text-[#FF455B] group-hover:text-white" width="51" height="46" viewBox="0 0 51 46" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M48 16.8848C49.6699 17.8516 50.8125 19.6973 50.7246 21.7188C50.7246 23.8281 49.6699 25.6738 47.9121 26.6406V40C47.9121 40.8789 47.2969 42.8125 45.0996 42.8125C44.4844 42.8125 43.8691 42.6367 43.4297 42.1973L35.8711 36.2207C32.1797 33.2324 27.4336 31.5625 22.6875 31.5625H20.1387C19.9629 32.5293 19.7871 33.4082 19.7871 34.375C19.7871 37.0117 20.666 39.2969 22.0723 41.2305C23.4785 43.0762 22.0723 45.625 19.7871 45.625H10.4707C9.41602 45.625 8.44922 45.0977 8.00977 44.1309C6.51562 41.2305 5.72461 37.8906 5.72461 34.375L5.8125 31.5625C2.64844 31.5625 0.1875 29.1016 0.1875 25.9375V17.5C0.1875 14.4238 2.64844 11.875 5.8125 11.875H22.6875C27.4336 11.875 32.1797 10.293 35.8711 7.30469L43.4297 1.32812C43.8691 0.888672 44.4844 0.625 45.1875 0.625C47.3848 0.625 48 2.73438 48 3.4375V16.8848ZM19.7871 42.8125C17.9414 40.4395 16.9746 37.5391 16.9746 34.375C16.9746 33.4961 17.1504 32.5293 17.3262 31.5625H8.625L8.53711 31.6504V34.4629C8.53711 37.3633 9.24023 40.1758 10.4707 42.8125H19.7871ZM5.8125 28.75H22.6875V14.6875H5.8125C4.23047 14.6875 3 16.0059 3 17.5V25.9375C3 27.5195 4.23047 28.75 5.8125 28.75ZM45.1875 39.9121V3.52539C45.0996 3.52539 45.0996 3.52539 45.0996 3.52539L37.6289 9.50195C34.1133 12.2266 29.8945 13.9844 25.5 14.5117V29.0137C29.8945 29.541 34.1133 31.2109 37.6289 34.0234L45.0996 40C45.0996 40 45.1875 40 45.1875 39.9121Z"
+                fill="currentColor" />
+            </svg>
+          </span>
+
+          <h3
+            class="font-semibold text-xl text-black_21 pt-3 lg:pt-7 transition-all duration-300 group-hover:text-white">
+            Congregation Communication
+          </h3>
+
+          <p
+            class="w-full text-paragraph text-lg leading-8 mt-2 lg:mt-6 transition-all duration-300 group-hover:text-white">
+            Send bulk SMS, email newsletters, and push notifications to your
+            entire church or targeted groups instantly.
+          </p>
+
+          <a href="#"
+            class="text-base font-medium leading-5 text-paragraph flex items-center gap-2 transition-all duration-300 group-hover:text-white group mt-2 lg:mt-5">
+            Learn More
+            <span class="block">
+              <svg class="fill-current text-paragraph transition-all group-hover:text-white duration-300" width="13"
+                height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M5.96094 0.816406C6.07031 0.679688 6.28906 0.679688 6.42578 0.816406L12.1406 6.53125C12.2773 6.66797 12.2773 6.85938 12.1406 6.99609L6.42578 12.7109C6.28906 12.8477 6.07031 12.8477 5.96094 12.7109L5.41406 12.1914C5.27734 12.0547 5.27734 11.8359 5.41406 11.7266L9.65234 7.46094H0.328125C0.136719 7.46094 0 7.32422 0 7.13281V6.36719C0 6.20312 0.136719 6.03906 0.328125 6.03906H9.65234L5.41406 1.80078C5.27734 1.69141 5.27734 1.47266 5.41406 1.33594L5.96094 0.816406Z">
+                </path>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+        <div class="p-5 lg:px-10 lg:py-10 bg-white shadow-primary-shadow-3 group hover:bg-hero-pattern"
+          data-aos="fade-up" data-aos-delay="500">
+          <span>
+            <svg class="text-[#FF455B] group-hover:text-white" width="51" height="46" viewBox="0 0 51 46" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M48 16.8848C49.6699 17.8516 50.8125 19.6973 50.7246 21.7188C50.7246 23.8281 49.6699 25.6738 47.9121 26.6406V40C47.9121 40.8789 47.2969 42.8125 45.0996 42.8125C44.4844 42.8125 43.8691 42.6367 43.4297 42.1973L35.8711 36.2207C32.1797 33.2324 27.4336 31.5625 22.6875 31.5625H20.1387C19.9629 32.5293 19.7871 33.4082 19.7871 34.375C19.7871 37.0117 20.666 39.2969 22.0723 41.2305C23.4785 43.0762 22.0723 45.625 19.7871 45.625H10.4707C9.41602 45.625 8.44922 45.0977 8.00977 44.1309C6.51562 41.2305 5.72461 37.8906 5.72461 34.375L5.8125 31.5625C2.64844 31.5625 0.1875 29.1016 0.1875 25.9375V17.5C0.1875 14.4238 2.64844 11.875 5.8125 11.875H22.6875C27.4336 11.875 32.1797 10.293 35.8711 7.30469L43.4297 1.32812C43.8691 0.888672 44.4844 0.625 45.1875 0.625C47.3848 0.625 48 2.73438 48 3.4375V16.8848ZM19.7871 42.8125C17.9414 40.4395 16.9746 37.5391 16.9746 34.375C16.9746 33.4961 17.1504 32.5293 17.3262 31.5625H8.625L8.53711 31.6504V34.4629C8.53711 37.3633 9.24023 40.1758 10.4707 42.8125H19.7871ZM5.8125 28.75H22.6875V14.6875H5.8125C4.23047 14.6875 3 16.0059 3 17.5V25.9375C3 27.5195 4.23047 28.75 5.8125 28.75ZM45.1875 39.9121V3.52539C45.0996 3.52539 45.0996 3.52539 45.0996 3.52539L37.6289 9.50195C34.1133 12.2266 29.8945 13.9844 25.5 14.5117V29.0137C29.8945 29.541 34.1133 31.2109 37.6289 34.0234L45.0996 40C45.0996 40 45.1875 40 45.1875 39.9121Z"
+                fill="currentColor" />
+            </svg>
+          </span>
+
+          <h3
+            class="font-semibold text-xl text-black_21 pt-3 lg:pt-7 transition-all duration-300 group-hover:text-white">
+            Church JobHub
+          </h3>
+
+          <p
+            class="w-full text-paragraph text-lg leading-8 mt-2 lg:mt-6 transition-all duration-300 group-hover:text-white">
+            Create opportunities within your community. Members can share
+            job openings, promote services, and support one another
+            economically—strengthening both relationships and livelihoods.
+          </p>
+
+          <a href="#"
+            class="text-base font-medium leading-5 text-paragraph flex items-center gap-2 transition-all duration-300 group-hover:text-white group mt-2 lg:mt-5">
+            Learn More
+            <span class="block">
+              <svg class="fill-current text-paragraph transition-all group-hover:text-white duration-300" width="13"
+                height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M5.96094 0.816406C6.07031 0.679688 6.28906 0.679688 6.42578 0.816406L12.1406 6.53125C12.2773 6.66797 12.2773 6.85938 12.1406 6.99609L6.42578 12.7109C6.28906 12.8477 6.07031 12.8477 5.96094 12.7109L5.41406 12.1914C5.27734 12.0547 5.27734 11.8359 5.41406 11.7266L9.65234 7.46094H0.328125C0.136719 7.46094 0 7.32422 0 7.13281V6.36719C0 6.20312 0.136719 6.03906 0.328125 6.03906H9.65234L5.41406 1.80078C5.27734 1.69141 5.27734 1.47266 5.41406 1.33594L5.96094 0.816406Z">
+                </path>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+        <div class="p-5 lg:px-10 lg:py-10 bg-white shadow-primary-shadow-3 group hover:bg-hero-pattern"
+          data-aos="fade-up" data-aos-delay="500">
+          <span>
+            <svg class="text-[#FF455B] group-hover:text-white" width="51" height="46" viewBox="0 0 51 46" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M48 16.8848C49.6699 17.8516 50.8125 19.6973 50.7246 21.7188C50.7246 23.8281 49.6699 25.6738 47.9121 26.6406V40C47.9121 40.8789 47.2969 42.8125 45.0996 42.8125C44.4844 42.8125 43.8691 42.6367 43.4297 42.1973L35.8711 36.2207C32.1797 33.2324 27.4336 31.5625 22.6875 31.5625H20.1387C19.9629 32.5293 19.7871 33.4082 19.7871 34.375C19.7871 37.0117 20.666 39.2969 22.0723 41.2305C23.4785 43.0762 22.0723 45.625 19.7871 45.625H10.4707C9.41602 45.625 8.44922 45.0977 8.00977 44.1309C6.51562 41.2305 5.72461 37.8906 5.72461 34.375L5.8125 31.5625C2.64844 31.5625 0.1875 29.1016 0.1875 25.9375V17.5C0.1875 14.4238 2.64844 11.875 5.8125 11.875H22.6875C27.4336 11.875 32.1797 10.293 35.8711 7.30469L43.4297 1.32812C43.8691 0.888672 44.4844 0.625 45.1875 0.625C47.3848 0.625 48 2.73438 48 3.4375V16.8848ZM19.7871 42.8125C17.9414 40.4395 16.9746 37.5391 16.9746 34.375C16.9746 33.4961 17.1504 32.5293 17.3262 31.5625H8.625L8.53711 31.6504V34.4629C8.53711 37.3633 9.24023 40.1758 10.4707 42.8125H19.7871ZM5.8125 28.75H22.6875V14.6875H5.8125C4.23047 14.6875 3 16.0059 3 17.5V25.9375C3 27.5195 4.23047 28.75 5.8125 28.75ZM45.1875 39.9121V3.52539C45.0996 3.52539 45.0996 3.52539 45.0996 3.52539L37.6289 9.50195C34.1133 12.2266 29.8945 13.9844 25.5 14.5117V29.0137C29.8945 29.541 34.1133 31.2109 37.6289 34.0234L45.0996 40C45.0996 40 45.1875 40 45.1875 39.9121Z"
+                fill="currentColor" />
+            </svg>
+          </span>
+
+          <h3
+            class="font-semibold text-xl text-black_21 pt-3 lg:pt-7 transition-all duration-300 group-hover:text-white">
+            Private Prayer Requests
+          </h3>
+
+          <p
+            class="w-full text-paragraph text-lg leading-8 mt-2 lg:mt-6 transition-all duration-300 group-hover:text-white">
+            Allow members to privately submit prayer requests directly to
+            pastors or leaders. Provide timely spiritual support and ensure
+            no one feels unseen or unheard.
+          </p>
+
+          <a href="#"
+            class="text-base font-medium leading-5 text-paragraph flex items-center gap-2 transition-all duration-300 group-hover:text-white group mt-2 lg:mt-5">
+            Learn More
+            <span class="block">
+              <svg class="fill-current text-paragraph transition-all group-hover:text-white duration-300" width="13"
+                height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M5.96094 0.816406C6.07031 0.679688 6.28906 0.679688 6.42578 0.816406L12.1406 6.53125C12.2773 6.66797 12.2773 6.85938 12.1406 6.99609L6.42578 12.7109C6.28906 12.8477 6.07031 12.8477 5.96094 12.7109L5.41406 12.1914C5.27734 12.0547 5.27734 11.8359 5.41406 11.7266L9.65234 7.46094H0.328125C0.136719 7.46094 0 7.32422 0 7.13281V6.36719C0 6.20312 0.136719 6.03906 0.328125 6.03906H9.65234L5.41406 1.80078C5.27734 1.69141 5.27734 1.47266 5.41406 1.33594L5.96094 0.816406Z">
+                </path>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+        <div class="p-5 lg:px-10 lg:py-10 bg-white shadow-primary-shadow-3 group hover:bg-hero-pattern"
+          data-aos="fade-up" data-aos-delay="500">
+          <span>
+            <svg class="text-[#FF455B] group-hover:text-white" width="51" height="46" viewBox="0 0 51 46" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M48 16.8848C49.6699 17.8516 50.8125 19.6973 50.7246 21.7188C50.7246 23.8281 49.6699 25.6738 47.9121 26.6406V40C47.9121 40.8789 47.2969 42.8125 45.0996 42.8125C44.4844 42.8125 43.8691 42.6367 43.4297 42.1973L35.8711 36.2207C32.1797 33.2324 27.4336 31.5625 22.6875 31.5625H20.1387C19.9629 32.5293 19.7871 33.4082 19.7871 34.375C19.7871 37.0117 20.666 39.2969 22.0723 41.2305C23.4785 43.0762 22.0723 45.625 19.7871 45.625H10.4707C9.41602 45.625 8.44922 45.0977 8.00977 44.1309C6.51562 41.2305 5.72461 37.8906 5.72461 34.375L5.8125 31.5625C2.64844 31.5625 0.1875 29.1016 0.1875 25.9375V17.5C0.1875 14.4238 2.64844 11.875 5.8125 11.875H22.6875C27.4336 11.875 32.1797 10.293 35.8711 7.30469L43.4297 1.32812C43.8691 0.888672 44.4844 0.625 45.1875 0.625C47.3848 0.625 48 2.73438 48 3.4375V16.8848ZM19.7871 42.8125C17.9414 40.4395 16.9746 37.5391 16.9746 34.375C16.9746 33.4961 17.1504 32.5293 17.3262 31.5625H8.625L8.53711 31.6504V34.4629C8.53711 37.3633 9.24023 40.1758 10.4707 42.8125H19.7871ZM5.8125 28.75H22.6875V14.6875H5.8125C4.23047 14.6875 3 16.0059 3 17.5V25.9375C3 27.5195 4.23047 28.75 5.8125 28.75ZM45.1875 39.9121V3.52539C45.0996 3.52539 45.0996 3.52539 45.0996 3.52539L37.6289 9.50195C34.1133 12.2266 29.8945 13.9844 25.5 14.5117V29.0137C29.8945 29.541 34.1133 31.2109 37.6289 34.0234L45.0996 40C45.0996 40 45.1875 40 45.1875 39.9121Z"
+                fill="currentColor" />
+            </svg>
+          </span>
+
+          <h3
+            class="font-semibold text-xl text-black_21 pt-3 lg:pt-7 transition-all duration-300 group-hover:text-white">
+            Celebrate & Recognize Your Community
+          </h3>
+
+          <p
+            class="w-full text-paragraph text-lg leading-8 mt-2 lg:mt-6 transition-all duration-300 group-hover:text-white">
+            Churchman's voting feature lets churches run fun, engaging award events and member recognition polls — keeping your congregation connected, motivated, and
+            celebrated all in one place.
+          </p>
+
+          <a href="#"
+            class="text-base font-medium leading-5 text-paragraph flex items-center gap-2 transition-all duration-300 group-hover:text-white group mt-2 lg:mt-5">
+            Learn More
+            <span class="block">
+              <svg class="fill-current text-paragraph transition-all group-hover:text-white duration-300" width="13"
+                height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M5.96094 0.816406C6.07031 0.679688 6.28906 0.679688 6.42578 0.816406L12.1406 6.53125C12.2773 6.66797 12.2773 6.85938 12.1406 6.99609L6.42578 12.7109C6.28906 12.8477 6.07031 12.8477 5.96094 12.7109L5.41406 12.1914C5.27734 12.0547 5.27734 11.8359 5.41406 11.7266L9.65234 7.46094H0.328125C0.136719 7.46094 0 7.32422 0 7.13281V6.36719C0 6.20312 0.136719 6.03906 0.328125 6.03906H9.65234L5.41406 1.80078C5.27734 1.69141 5.27734 1.47266 5.41406 1.33594L5.96094 0.816406Z">
+                </path>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Business -->
+  <section class="hidden lg:block pt-[130px] pb-[130px]" style="
+          background: url(assets/images/banner/business-bg.png) no-repeat
+            center / cover;
+        ">
+    <div class="container">
+      <div class="grid text-center justify-center">
+        <div class="col-span-5">
+          <h2 class="text-white text-5xl font-semibold leading-[60px] px-44" data-aos="fade-up" data-aos-delay="100">
+            Strengthen Your Ministry with <br />
+            Tools Built Specifically for Church Leaders
+          </h2>
+
+          <p class="text-lg text-white mt-6 px-44" data-aos="fade-up" data-aos-delay="200">
+            Churchman is purpose-built for faith communities of every size.
+            Whether you're a small parish or a large multi-campus church,
+            our platform scales with your needs, integrates with your
+            worship tools, and keeps your data secure.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-12 gap-7 mt-14">
+        <div class="col-span-4" data-aos="fade-left" data-aos-delay="100">
+          <div class="px-6 py-6 bg-white">
+            <div class=" ">
+              <div>
+                <h4 class="text-3xl text-black_21 font-semibold tracking-[-3%]">
+                  Automated Attendance Tracking
+                </h4>
+
+                <p class="text-lg font-normal text-paragraph leading-8 pt-7">
+                  Check-in members with a tap, registration link, or QR
+                  codes and set expiration time for attendance registration.
+                  Get instant reports on service attendance and engagement
+                  trends.
+                </p>
+              </div>
+
+              <div class="flex-1 mt-28">
+                <div class="w-full h-[296px] rounded-t-lg overflow-hidden">
+                  <img src="assets/images/thumb/mmm.png" class="w-100" alt="thumb" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-8">
+          <div class="px-6 py-6 bg-white" data-aos="fade-up" data-aos-delay="200">
+            <div class="flex items-center gap-16">
+              <div>
+                <h4 class="text-3xl text-black_21 font-semibold tracking-[-3%]">
+                  Event & Service Planning Made Simple
+                </h4>
+
+                <p class="text-lg font-normal text-paragraph leading-8 pt-7">
+                  Schedule worship services, bible studies, outreach events,
+                  and volunteer rosters from one unified calendar — visible
+                  to your whole team.
+                </p>
+              </div>
+
+              <div class="flex-1">
+                <div class="w-[393px] h-[265px] rounded-t-lg overflow-hidden">
+                  <img src="assets/images/thumb/event.png" class="w-100" alt="thumb" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="px-6 py-6 bg-white mt-7" data-aos="fade-up" data-aos-delay="300">
+            <div class="flex items-center gap-16">
+              <div>
+                <h4 class="text-3xl text-black_21 font-semibold tracking-[-3%]">
+                  Pastoral Care & Follow-Up Workflows
+                </h4>
+
+                <p class="text-lg font-normal text-paragraph leading-8 pt-7">
+                  Never let a first-time visitor or absent member fall
+                  through the cracks. Set up automated follow-up tasks,
+                  prayer requests, and care assignments.
+                </p>
+              </div>
+
+              <div class="flex-1">
+                <div class="w-[393px] h-[265px] rounded-t-lg overflow-hidden">
+                  <img src="assets/images/thumb/connected.png" class="w-100" alt="thumb" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platform -->
+  <section class="pt-14 lg:pt-[130px]">
+    <div class="container">
+      <div class="grid lg:grid-cols-2 gap-[135px]">
+        <div class="hidden lg:block h-[600px]" data-aos="fade-left" data-aos-delay="100">
+          <img src="assets/images/thumb/event.png" class="h-full" alt="thumb" />
+        </div>
+
+        <div>
+          <span class="block font-semibold text-22 text-[#FF455B]" data-aos="fade-up" data-aos-delay="100">A Platform
+            Built for Faith Communities</span>
+          <h2 class="text-black_21 tracking-tight font-semibold text-2xl lg:text-5xl leading-8 lg:leading-[61px]"
+            data-aos="fade-up" data-aos-delay="200">
+            Everything Your Church Needs, in One Place
+          </h2>
+
+          <p class="text-lg text-paragraph lg:pr-16 mt-5 lg:mt-7" data-aos="fade-up" data-aos-delay="300">
+            Churchman gives your leadership team powerful reporting,
+            real-time insights, and ministry tools that work together
+            seamlessly — no tech expertise needed.
+          </p>
+
+          <ul class="mt-10">
+            <li class="text-lg font-normal text-paragraph flex items-center gap-2.5 pb-3.5" data-aos="fade-up"
+              data-aos-delay="400">
+              <span>
+                <img src="assets/images/icon/check-4.svg" alt="icon" />
+              </span>
+              Self-service member portals for giving, events, and groups
+            </li>
+            <li class="text-lg font-normal text-paragraph flex items-center gap-2.5 pb-3.5" data-aos="fade-up"
+              data-aos-delay="500">
+              <span>
+                <img src="assets/images/icon/check-4.svg" alt="icon" />
+              </span>
+              Volunteer scheduling and ministry team coordination tools
+            </li>
+            <li class="text-lg font-normal text-paragraph flex items-center gap-2.5" data-aos="fade-up"
+              data-aos-delay="600">
+              <span>
+                <img src="assets/images/icon/check-4.svg" alt="icon" />
+              </span>
+              Internal notes, prayer lists, and pastoral care tracking
+            </li>
+          </ul>
+
+          <div class="destinations_btn mt-9" data-aos="fade-up" data-aos-delay="700">
+            <a href="https://web.churchmann.org/auth/signup" class="btn-two after:bg-Gradiant-h5 before:bg-Gradiant-h5">
+              <p>
+                Get Started Free
+                <span>
+                  <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M4.25696 1.01172C4.33508 0.914062 4.49133 0.914062 4.58899 1.01172L8.67102 5.09375C8.76868 5.19141 8.76868 5.32812 8.67102 5.42578L4.58899 9.50781C4.49133 9.60547 4.33508 9.60547 4.25696 9.50781L3.86633 9.13672C3.76868 9.03906 3.76868 8.88281 3.86633 8.80469L6.89368 5.75781H0.233521C0.0968018 5.75781 -0.000854492 5.66016 -0.000854492 5.52344V4.97656C-0.000854492 4.85938 0.0968018 4.74219 0.233521 4.74219H6.89368L3.86633 1.71484C3.76868 1.63672 3.76868 1.48047 3.86633 1.38281L4.25696 1.01172Z">
+                    </path>
+                  </svg>
+                </span>
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="bg-[#1B1B1B] py-14 lg:py-[130px] mt-14 lg:mt-[130px]">
+    <div class="container">
+      <div class="lg:grid lg:grid-cols-2 items-center">
+        <div class="">
+          <div class="">
+            <span class="text-[#FF455B] text-xl font-semibold pb-4 block aos-init">
+              What Makes Us Stand Out
+            </span>
+            <h2 class="text-white font-semibold text-2xl lg:text-5xl leading-8 lg:leading-[61px] aos-init">
+              More Than Software — <br />
+              A Ministry Partner
+            </h2>
+            <div class="swiper h5-testimonials pt-8 lg:pt-[70px]">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <svg width="44" height="35" viewBox="0 0 44 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M42.1106 14.1004C39.8261 5.9306 34.1906 0 28.7126 0C28.2726 0 27.8331 0.0382981 27.4048 0.114025C27.162 0.156675 26.9496 0.299424 26.8182 0.506584C26.6872 0.715049 26.6502 0.968341 26.7167 1.2051L27.8444 5.23862C27.9532 5.62813 28.3288 5.89143 28.7191 5.87359L28.8088 5.87185C30.8404 5.87185 34.5531 8.91658 36.4459 15.6837C36.5207 15.9522 36.5917 16.2268 36.66 16.5132C34.5353 15.4617 32.0006 15.2184 29.7053 15.8577C24.5272 17.3065 21.4938 22.6971 22.9413 27.8743C24.1146 32.0693 27.9736 35 32.3257 35C33.2123 35 34.0975 34.8777 34.957 34.637C38.3717 33.6826 40.939 30.8477 42.1863 26.6562C43.3122 22.8746 43.2839 18.2984 42.1106 14.1004Z"
+                      fill="url(#paint0_linear_219_3370)" />
+                    <path
+                      d="M6.13111 0.00146484C5.69198 0.00146484 5.25198 0.0388926 4.82417 0.114619C4.58176 0.156399 4.36894 0.300019 4.23795 0.507178C4.10695 0.715644 4.06995 0.968936 4.13611 1.20569L5.26417 5.23921C5.37297 5.62873 5.7416 5.89203 6.13894 5.87418L6.22772 5.87244C8.25928 5.87244 11.9725 8.91717 13.8652 15.6842C13.9405 15.9545 14.0115 16.2291 14.0793 16.5138C11.9538 15.4623 9.41999 15.219 7.12469 15.8583C1.94744 17.3071 -1.08684 22.6976 0.361533 27.8749C1.53486 32.0699 5.39386 35.0006 9.74596 35.0006C10.6325 35.0006 11.5177 34.8783 12.3777 34.6376C15.7919 33.6832 18.3592 30.8483 19.6069 26.6568C20.7324 22.8752 20.7045 18.2986 19.5308 14.1001C17.2451 5.9312 11.6104 0.00146484 6.13111 0.00146484Z"
+                      fill="url(#paint1_linear_219_3370)" />
+                    <defs>
+                      <linearGradient id="paint0_linear_219_3370" x1="32.7956" y1="0" x2="32.7956" y2="35"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#FF455B" />
+                        <stop offset="1" stop-color="#515EFE" />
+                      </linearGradient>
+                      <linearGradient id="paint1_linear_219_3370" x1="10.2158" y1="0.00146484" x2="10.2158" y2="35.0006"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#FF455B" />
+                        <stop offset="1" stop-color="#515EFE" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <p class="text-white w-full max-w-[490px] text-22 font-semibold pt-5 lg:pt-10">
+                    While other platforms give you features, Churchman gives you outcomes. Less time on admin, more
+                    time on people. Streamlined giving, engaged members, and a leadership team that finally has the
+                    clarity to lead with confidence.
+                  </p>
+                  <div class="flex items-center gap-5 pt-9">
+                    <div class="flex w-[50px] min-w-[50px] aspect-square rounded-full overflow-hidden">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center max-w-[200px] gap-[20px] mt-[20px]">
+              <div class="pagination3 swiper-pagination s"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hidden lg:flex justify-end">
+          <div class="relative">
+            <div class="w-[440px] h-[612px]">
+              <img src="assets/images/thumb/new.png" class="h-full w-full" alt="thumb" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="pt-14 lg:pt-[130px] pb-14 lg:pb-[130px] bg-white">
+    <div class="container mx-auto max-w-[1100px]">
+      <div class="text-center">
+        <span class="text-[#FF455B] text-xl font-semibold pb-4 block" data-aos="fade-up" data-aos-delay="100">
+          Pricing Plans
+        </span>
+        <h2 class="text-black_21 font-semibold text-2xl lg:text-5xl leading-8 lg:leading-[61px]" data-aos="fade-up"
+          data-aos-delay="200">
+          Simple, Affordable, and Transparent
+        </h2>
+      </div>
+
+      <!-- Replace the original grid of pricing cards with a narrower, centered, more compact layout -->
+      <div class="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-6 lg:mt-10 gap-6">
+        <!-- FREE PLAN -->
+        <div class="bg-[#F5F5F5]" data-aos="fade-up" data-aos-delay="100">
+          <div class="border border-[#FFFFFF1A] relative z-10 px-4 lg:px-6 pt-3 pb-6">
+            <h1 class="text-xl font-semibold text-blue-dark_ai mt-4">Free</h1>
+            <h2 class="text-3xl font-semibold text-black_21 mt-3">
+              $0<span class="text-lg font-normal">/monthly</span>
+            </h2>
+            <p class="text-sm text-paragraph mt-2">Churches under 50 members</p>
+            <div class="w-fit mt-6">
+              <a href="https://web.churchmann.org/auth/signup"
+                class="btn-two border-white/10 after:bg-black_21 before:bg-black_21 hover:text-black_21">
+                <p class="text-sm">
+                  Get Started Today
+                  <span>
+                    <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M4.25696 1.01172C4.33508 0.914062 4.49133 0.914062 4.58899 1.01172L8.67102 5.09375C8.76868 5.19141 8.76868 5.32812 8.67102 5.42578L4.58899 9.50781C4.49133 9.60547 4.33508 9.60547 4.25696 9.50781L3.86633 9.13672C3.76868 9.03906 3.76868 8.88281 3.86633 8.80469L6.89368 5.75781H0.233521C0.0968018 5.75781 -0.000854492 5.66016 -0.000854492 5.52344V4.97656C-0.000854492 4.85938 0.0968018 4.74219 0.233521 4.74219H6.89368L3.86633 1.71484C3.76868 1.63672 3.76868 1.48047 3.86633 1.38281L4.25696 1.01172Z"
+                        fill="currentColor"></path>
+                    </svg>
+                  </span>
+                </p>
+              </a>
+            </div>
+            <ul class="text-sm text-black_21 flex flex-col gap-3 mt-6">
+              <li class="flex h-fit items-center gap-2.5"><svg width="18" height="15" viewBox="0 0 18 15" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15.9922 0.78125C16.1875 0.585938 16.5 0.585938 16.6562 0.78125L17.7891 1.875C17.9453 2.07031 17.9453 2.38281 17.7891 2.53906L6.07031 14.2578C5.875 14.4531 5.60156 14.4531 5.40625 14.2578L0.171875 9.0625C0.015625 8.86719 0.015625 8.55469 0.171875 8.39844L1.30469 7.26562C1.46094 7.10938 1.77344 7.10938 1.96875 7.26562L5.71875 11.0547L15.9922 0.78125Z"
+                    fill="#057AFD"></path>
+                </svg><span>Limited features</span></li>
+              <li class="flex h-fit items-center gap-2.5"><svg width="18" height="15" viewBox="0 0 18 15" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15.9922 0.78125C16.1875 0.585938 16.5 0.585938 16.6562 0.78125L17.7891 1.875C17.9453 2.07031 17.9453 2.38281 17.7891 2.53906L6.07031 14.2578C5.875 14.4531 5.60156 14.4531 5.40625 14.2578L0.171875 9.0625C0.015625 8.86719 0.015625 8.55469 0.171875 8.39844L1.30469 7.26562C1.46094 7.10938 1.77344 7.10938 1.96875 7.26562L5.71875 11.0547L15.9922 0.78125Z"
+                    fill="#057AFD"></path>
+                </svg><span>SMS services (charged separately)</span></li>
+              <li class="flex h-fit items-center gap-2.5"><svg width="18" height="15" viewBox="0 0 18 15" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15.9922 0.78125C16.1875 0.585938 16.5 0.585938 16.6562 0.78125L17.7891 1.875C17.9453 2.07031 17.9453 2.38281 17.7891 2.53906L6.07031 14.2578C5.875 14.4531 5.60156 14.4531 5.40625 14.2578L0.171875 9.0625C0.015625 8.86719 0.015625 8.55469 0.171875 8.39844L1.30469 7.26562C1.46094 7.10938 1.77344 7.10938 1.96875 7.26562L5.71875 11.0547L15.9922 0.78125Z"
+                    fill="#057AFD"></path>
+                </svg><span>Basic member management</span></li>
+              <li class="flex h-fit items-center gap-2.5"><svg width="18" height="15" viewBox="0 0 18 15" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15.9922 0.78125C16.1875 0.585938 16.5 0.585938 16.6562 0.78125L17.7891 1.875C17.9453 2.07031 17.9453 2.38281 17.7891 2.53906L6.07031 14.2578C5.875 14.4531 5.60156 14.4531 5.40625 14.2578L0.171875 9.0625C0.015625 8.86719 0.015625 8.55469 0.171875 8.39844L1.30469 7.26562C1.46094 7.10938 1.77344 7.10938 1.96875 7.26562L5.71875 11.0547L15.9922 0.78125Z"
+                    fill="#057AFD"></path>
+                </svg><span>Finance dashboard</span></li>
+              <li class="flex h-fit items-center gap-2.5"><svg width="18" height="15" viewBox="0 0 18 15" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15.9922 0.78125C16.1875 0.585938 16.5 0.585938 16.6562 0.78125L17.7891 1.875C17.9453 2.07031 17.9453 2.38281 17.7891 2.53906L6.07031 14.2578C5.875 14.4531 5.60156 14.4531 5.40625 14.2578L0.171875 9.0625C0.015625 8.86719 0.015625 8.55469 0.171875 8.39844L1.30469 7.26562C1.46094 7.10938 1.77344 7.10938 1.96875 7.26562L5.71875 11.0547L15.9922 0.78125Z"
+                    fill="#057AFD"></path>
+                </svg><span>Google Ads displayed</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- STARTER PLAN -->
+        <div class="bg-[#E7F0FF]" data-aos="fade-up" data-aos-delay="200">
+          <div class="border border-[#FFFFFF1A] relative z-10 px-4 lg:px-6 pt-3 pb-6">
+            <h1 class="text-xl font-semibold text-blue-dark_ai mt-4">Starter</h1>
+            <h2 class="text-3xl font-semibold text-black_21 mt-3 monthly-price">
+              $5<span class="text-lg font-normal">/monthly</span>
+            </h2>
+            <h2 class="text-3xl font-semibold text-black_21 mt-3 yearly-price hidden">
+              $5<span class="text-lg font-normal">/monthly</span>
+            </h2>
+            <p class="text-sm text-paragraph mt-2">Churches up to 200 members</p>
+            <div class="w-fit mt-6">
+              <a href="https://web.churchmann.org/auth/signup"
+                class="btn-two border-white/10 after:bg-black_21 before:bg-black_21 hover:text-black_21">
+                <p class="text-sm">
+                  Get Started Today
+                  <span>
+                    <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M4.25696 1.01172C4.33508 0.914062 4.49133 0.914062 4.58899 1.01172L8.67102 5.09375C8.76868 5.19141 8.76868 5.32812 8.67102 5.42578L4.58899 9.50781C4.49133 9.60547 4.33508 9.60547 4.25696 9.50781L3.86633 9.13672C3.76868 9.03906 3.76868 8.88281 3.86633 8.80469L6.89368 5.75781H0.233521C0.0968018 5.75781 -0.000854492 5.66016 -0.000854492 5.52344V4.97656C-0.000854492 4.85938 0.0968018 4.74219 0.233521 4.74219H6.89368L3.86633 1.71484C3.76868 1.63672 3.76868 1.48047 3.86633 1.38281L4.25696 1.01172Z"
+                        fill="currentColor"></path>
+                    </svg>
+                  </span>
+                </p>
+              </a>
+            </div>
+            <ul class="text-sm text-black_21 flex flex-col gap-3 mt-6">
+              <li class="flex h-fit items-center gap-2.5"><svg width="18" height="15" viewBox="0 0 18 15" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15.9922 0.78125C16.1875 0.585938 16.5 0.585938 16.6562 0.78125L17.7891 1.875C17.9453 2.07031 17.9453 2.38281 17.7891 2.53906L6.07031 14.2578C5.875 14.4531 5.60156 14.4531 5.40625 14.2578L0.171875 9.0625C0.015625 8.86719 0.015625 8.55469 0.171875 8.39844L1.30469 7.26562C1.46094 7.10938 1.77344 7.10938 1.96875 7.26562L5.71875 11.0547L15.9922 0.78125Z"
+                    fill="#057AFD"></path>
+                </svg><span>All Free features</span></li>
+              <li class="flex h-fit items-center gap-2.5"><svg width="18" height="15" viewBox="0 0 18 15" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15.9922 0.78125C16.1875 0.585938 16.5 0.585938 16.6562 0.78125L17.7891 1.875C17.9453 2.07031 17.9453 2.38281 17.7891 2.53906L6.07031 14.2578C5.875 14.4531 5.60156 14.4531 5.40625 14.2578L0.171875 9.0625C0.015625 8.86719 0.015625 8.55469 0.171875 8.39844L1.30469 7.26562C1.46094 7.10938 1.77344 7.10938 1.96875 7.26562L5.71875 11.0547L15.9922 0.78125Z"
+                    fill="#057AFD"></path>
+                </svg><span>Reports generation</span></li>
+              <li class="flex h-fit items-center gap-2.5"><svg width="18" height="15" viewBox="0 0 18 15" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15.9922 0.78125C16.1875 0.585938 16.5 0.585938 16.6562 0.78125L17.7891 1.875C17.9453 2.07031 17.9453 2.38281 17.7891 2.53906L6.07031 14.2578C5.875 14.4531 5.60156 14.4531 5.40625 14.2578L0.171875 9.0625C0.015625 8.86719 0.015625 8.55469 0.171875 8.39844L1.30469 7.26562C1.46094 7.10938 1.77344 7.10938 1.96875 7.26562L5.71875 11.0547L15.9922 0.78125Z"
+                    fill="#057AFD"></path>
+                </svg><span>Voting &amp; nominations Feature</span></li>
+              <li class="flex h-fit items-center gap-2.5"><svg width="18" height="15" viewBox="0 0 18 15" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15.9922 0.78125C16.1875 0.585938 16.5 0.585938 16.6562 0.78125L17.7891 1.875C17.9453 2.07031 17.9453 2.38281 17.7891 2.53906L6.07031 14.2578C5.875 14.4531 5.60156 14.4531 5.40625 14.2578L0.171875 9.0625C0.015625 8.86719 0.015625 8.55469 0.171875 8.39844L1.30469 7.26562C1.46094 7.10938 1.77344 7.10938 1.96875 7.26562L5.71875 11.0547L15.9922 0.78125Z"
+                    fill="#057AFD"></path>
+                </svg><span>Finance dashboard</span></li>
+              <li class="flex h-fit items-center gap-2.5"><svg width="18" height="15" viewBox="0 0 18 15" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15.9922 0.78125C16.1875 0.585938 16.5 0.585938 16.6562 0.78125L17.7891 1.875C17.9453 2.07031 17.9453 2.38281 17.7891 2.53906L6.07031 14.2578C5.875 14.4531 5.60156 14.4531 5.40625 14.2578L0.171875 9.0625C0.015625 8.86719 0.015625 8.55469 0.171875 8.39844L1.30469 7.26562C1.46094 7.10938 1.77344 7.10938 1.96875 7.26562L5.71875 11.0547L15.9922 0.78125Z"
+                    fill="#057AFD"></path>
+                </svg><span>Limited features</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- GROWTH PLAN (BEST / FEATURED) -->
+        <div class="  " data-aos="fade-up" data-aos-delay="300">
+          <div class="bg-black_21 relative z-10 px-4 lg:px-6 pt-3 pb-6">
+            <!-- <div class="pricing-tag w-[90px] h-[26px] flex items-center bg-[#FF7A00] rotate-90 absolute -right-[666px] top-[50px]">
+                <p class="text-white text-sm font-semibold pl-2">Best Plan</p>
+              </div> -->
+            <h1 class="text-xl font-semibold text-white mt-4">Growth</h1>
+            <h2 class="text-3xl font-semibold text-white mt-3 monthly-price">
+              $15<span class="text-lg font-normal">/monthly</span>
+            </h2>
+            <h2 class="text-3xl font-semibold text-white mt-3 yearly-price hidden">
+              $15<span class="text-lg font-normal">/monthly</span>
+            </h2>
+            <p class="text-sm text-white mt-2">Churches with 200–500 members</p>
+            <div class="w-fit mt-6">
+              <a href="https://web.churchmann.org/auth/signup"
+                class="btn-two !border-white/10 after:bg-h7gredinet before:bg-h7gredinet">
+                <p class="text-sm">
+                  Get Started Today
+                  <span>
+                    <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M4.25696 1.01172C4.33508 0.914062 4.49133 0.914062 4.58899 1.01172L8.67102 5.09375C8.76868 5.19141 8.76868 5.32812 8.67102 5.42578L4.58899 9.50781C4.49133 9.60547 4.33508 9.60547 4.25696 9.50781L3.86633 9.13672C3.76868 9.03906 3.76868 8.88281 3.86633 8.80469L6.89368 5.75781H0.233521C0.0968018 5.75781 -0.000854492 5.66016 -0.000854492 5.52344V4.97656C-0.000854492 4.85938 0.0968018 4.74219 0.233521 4.74219H6.89368L3.86633 1.71484C3.76868 1.63672 3.76868 1.48047 3.86633 1.38281L4.25696 1.01172Z"
+                        fill="currentColor"></path>
+                    </svg>
+                  </span>
+                </p>
+              </a>
+            </div>
+            <ul class="text-sm text-white flex flex-col gap-3 mt-6">
+              <li class="flex h-fit items-center gap-2.5"><svg width="18" height="15" viewBox="0 0 18 15" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15.9922 0.78125C16.1875 0.585938 16.5 0.585938 16.6562 0.78125L17.7891 1.875C17.9453 2.07031 17.9453 2.38281 17.7891 2.53906L6.07031 14.2578C5.875 14.4531 5.60156 14.4531 5.40625 14.2578L0.171875 9.0625C0.015625 8.86719 0.015625 8.55469 0.171875 8.39844L1.30469 7.26562C1.46094 7.10938 1.77344 7.10938 1.96875 7.26562L5.71875 11.0547L15.9922 0.78125Z"
+                    fill="white"></path>
+                </svg><span>All Starter features</span></li>
+              <li class="flex h-fit items-center gap-2.5"><svg width="18" height="15" viewBox="0 0 18 15" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15.9922 0.78125C16.1875 0.585938 16.5 0.585938 16.6562 0.78125L17.7891 1.875C17.9453 2.07031 17.9453 2.38281 17.7891 2.53906L6.07031 14.2578C5.875 14.4531 5.60156 14.4531 5.40625 14.2578L0.171875 9.0625C0.015625 8.86719 0.015625 8.55469 0.171875 8.39844L1.30469 7.26562C1.46094 7.10938 1.77344 7.10938 1.96875 7.26562L5.71875 11.0547L15.9922 0.78125Z"
+                    fill="white"></path>
+                </svg><span>Church marketplace (job offers)</span></li>
+              <li class="flex h-fit items-center gap-2.5"><svg width="18" height="15" viewBox="0 0 18 15" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15.9922 0.78125C16.1875 0.585938 16.5 0.585938 16.6562 0.78125L17.7891 1.875C17.9453 2.07031 17.9453 2.38281 17.7891 2.53906L6.07031 14.2578C5.875 14.4531 5.60156 14.4531 5.40625 14.2578L0.171875 9.0625C0.015625 8.86719 0.015625 8.55469 0.171875 8.39844L1.30469 7.26562C1.46094 7.10938 1.77344 7.10938 1.96875 7.26562L5.71875 11.0547L15.9922 0.78125Z"
+                    fill="white"></path>
+                </svg><span>AI-powered features</span></li>
+              <li class="flex h-fit items-center gap-2.5"><svg width="18" height="15" viewBox="0 0 18 15" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15.9922 0.78125C16.1875 0.585938 16.5 0.585938 16.6562 0.78125L17.7891 1.875C17.9453 2.07031 17.9453 2.38281 17.7891 2.53906L6.07031 14.2578C5.875 14.4531 5.60156 14.4531 5.40625 14.2578L0.171875 9.0625C0.015625 8.86719 0.015625 8.55469 0.171875 8.39844L1.30469 7.26562C1.46094 7.10938 1.77344 7.10938 1.96875 7.26562L5.71875 11.0547L15.9922 0.78125Z"
+                    fill="white"></path>
+                </svg><span>Church website CMS</span></li>
+              <li class="flex h-fit items-center gap-2.5"><svg width="18" height="15" viewBox="0 0 18 15" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15.9922 0.78125C16.1875 0.585938 16.5 0.585938 16.6562 0.78125L17.7891 1.875C17.9453 2.07031 17.9453 2.38281 17.7891 2.53906L6.07031 14.2578C5.875 14.4531 5.60156 14.4531 5.40625 14.2578L0.171875 9.0625C0.015625 8.86719 0.015625 8.55469 0.171875 8.39844L1.30469 7.26562C1.46094 7.10938 1.77344 7.10938 1.96875 7.26562L5.71875 11.0547L15.9922 0.78125Z"
+                    fill="white"></path>
+                </svg><span>No Ads</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ENTERPRISE PLAN -->
+        <div class="bg-[#E7F0FF]" data-aos="fade-up" data-aos-delay="400">
+          <div class="border border-[#FFFFFF1A] relative z-10 px-4 lg:px-6 pt-3 pb-6">
+            <h1 class="text-xl font-semibold text-blue-dark_ai mt-4">Enterprise</h1>
+            <h2 class="text-3xl font-semibold text-black_21 mt-3 monthly-price">
+              $30<span class="text-lg font-normal">/monthly</span>
+            </h2>
+            <h2 class="text-3xl font-semibold text-black_21 mt-3 yearly-price hidden">
+              $30<span class="text-lg font-normal">/monthly</span>
+            </h2>
+            <p class="text-sm text-paragraph mt-2">Churches over 500 members</p>
+            <div class="w-fit mt-6">
+              <a href="https://web.churchmann.org/auth/signup"
+                class="btn-two !border-white/10 after:bg-black_21 before:bg-black_21 hover:text-black_21">
+                <p class="text-sm">
+                  Get Started Today
+                  <span>
+                    <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M4.25696 1.01172C4.33508 0.914062 4.49133 0.914062 4.58899 1.01172L8.67102 5.09375C8.76868 5.19141 8.76868 5.32812 8.67102 5.42578L4.58899 9.50781C4.49133 9.60547 4.33508 9.60547 4.25696 9.50781L3.86633 9.13672C3.76868 9.03906 3.76868 8.88281 3.86633 8.80469L6.89368 5.75781H0.233521C0.0968018 5.75781 -0.000854492 5.66016 -0.000854492 5.52344V4.97656C-0.000854492 4.85938 0.0968018 4.74219 0.233521 4.74219H6.89368L3.86633 1.71484C3.76868 1.63672 3.76868 1.48047 3.86633 1.38281L4.25696 1.01172Z"
+                        fill="currentColor"></path>
+                    </svg>
+                  </span>
+                </p>
+              </a>
+            </div>
+            <ul class="text-sm text-black_21 flex flex-col gap-3 mt-6">
+              <li class="flex h-fit items-center gap-2.5"><svg width="18" height="15" viewBox="0 0 18 15" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15.9922 0.78125C16.1875 0.585938 16.5 0.585938 16.6562 0.78125L17.7891 1.875C17.9453 2.07031 17.9453 2.38281 17.7891 2.53906L6.07031 14.2578C5.875 14.4531 5.60156 14.4531 5.40625 14.2578L0.171875 9.0625C0.015625 8.86719 0.015625 8.55469 0.171875 8.39844L1.30469 7.26562C1.46094 7.10938 1.77344 7.10938 1.96875 7.26562L5.71875 11.0547L15.9922 0.78125Z"
+                    fill="#057AFD"></path>
+                </svg><span>All Growth features</span></li>
+              <li class="flex h-fit items-center gap-2.5"><svg width="18" height="15" viewBox="0 0 18 15" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15.9922 0.78125C16.1875 0.585938 16.5 0.585938 16.6562 0.78125L17.7891 1.875C17.9453 2.07031 17.9453 2.38281 17.7891 2.53906L6.07031 14.2578C5.875 14.4531 5.60156 14.4531 5.40625 14.2578L0.171875 9.0625C0.015625 8.86719 0.015625 8.55469 0.171875 8.39844L1.30469 7.26562C1.46094 7.10938 1.77344 7.10938 1.96875 7.26562L5.71875 11.0547L15.9922 0.78125Z"
+                    fill="white"></path>
+                </svg><span>All features unlocked</span></li>
+              <li class="flex h-fit items-center gap-2.5"><svg width="18" height="15" viewBox="0 0 18 15" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15.9922 0.78125C16.1875 0.585938 16.5 0.585938 16.6562 0.78125L17.7891 1.875C17.9453 2.07031 17.9453 2.38281 17.7891 2.53906L6.07031 14.2578C5.875 14.4531 5.60156 14.4531 5.40625 14.2578L0.171875 9.0625C0.015625 8.86719 0.015625 8.55469 0.171875 8.39844L1.30469 7.26562C1.46094 7.10938 1.77344 7.10938 1.96875 7.26562L5.71875 11.0547L15.9922 0.78125Z"
+                    fill="white"></path>
+                </svg><span>In-app payment processing</span></li>
+              <li class="flex h-fit items-center gap-2.5"><svg width="18" height="15" viewBox="0 0 18 15" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15.9922 0.78125C16.1875 0.585938 16.5 0.585938 16.6562 0.78125L17.7891 1.875C17.9453 2.07031 17.9453 2.38281 17.7891 2.53906L6.07031 14.2578C5.875 14.4531 5.60156 14.4531 5.40625 14.2578L0.171875 9.0625C0.015625 8.86719 0.015625 8.55469 0.171875 8.39844L1.30469 7.26562C1.46094 7.10938 1.77344 7.10938 1.96875 7.26562L5.71875 11.0547L15.9922 0.78125Z"
+                    fill="white"></path>
+                </svg><span>Unlimited bulk SMS and Emails </span></li>
+              <li class="flex h-fit items-center gap-2.5"><svg width="18" height="15" viewBox="0 0 18 15" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15.9922 0.78125C16.1875 0.585938 16.5 0.585938 16.6562 0.78125L17.7891 1.875C17.9453 2.07031 17.9453 2.38281 17.7891 2.53906L6.07031 14.2578C5.875 14.4531 5.60156 14.4531 5.40625 14.2578L0.171875 9.0625C0.015625 8.86719 0.015625 8.55469 0.171875 8.39844L1.30469 7.26562C1.46094 7.10938 1.77344 7.10938 1.96875 7.26562L5.71875 11.0547L15.9922 0.78125Z"
+                    fill="white"></path>
+                </svg><span>Priority support</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="bg-gray_CRM relative pt-[50px] lg:pt-[120px] px-4 lg:px-0">
+    <img src="assets/images/thumb/f-1.svg" alt="" class="absolute left-0 top-[50px]" />
+    <img src="assets/images/thumb/f-2.svg" alt="" class="absolute left-0 top-[163px]" />
+    <img src="assets/images/thumb/f-3.svg" alt="" class="absolute right-0 top-[50px]" />
+    <img src="assets/images/thumb/f-4.svg" alt="" class="absolute right-0 top-[163px]" />
+    <div class="max-w-[793px] w-full mx-auto">
+      <h2
+        class="text-black_21 text-center tracking-tight font-semibold text-2xl lg:text-5xl leading-8 lg:leading-[61px]"
+        data-aos="fade-up" data-aos-delay="100">
+        Ready to Simplify Your Church Administration?
+      </h2>
+      <p class="w-full text-center text-paragraph text-lg leading-8 mt-6" data-aos="fade-up" data-aos-delay="200">
+        Join churches using Churchman to manage members, grow
+        giving, and strengthen community — all from one easy-to-use
+        platform.
+      </p>
+      <div class="mt-5 md:flex gap-5 w-full justify-center" data-aos="fade-up" data-aos-delay="300">
+        <input type="email" placeholder="Your Church Email Address..." id="h1_search_input"
+          class="border border-[#6A4CFF1A] py-2 md:py-0 px-6 focus:outline-none w-full text-black_21 bg-aliceblue flex-1 max-w-[350px]" />
+        <div class="mt-5 md:mt-0 lg:w-fit">
+          <a href="https://web.churchmann.org" class="btn-three">
+            <p class="">
+              Start For Free
+              <span>
+                <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M4.25696 1.01172C4.33508 0.914062 4.49133 0.914062 4.58899 1.01172L8.67102 5.09375C8.76868 5.19141 8.76868 5.32812 8.67102 5.42578L4.58899 9.50781C4.49133 9.60547 4.33508 9.60547 4.25696 9.50781L3.86633 9.13672C3.76868 9.03906 3.76868 8.88281 3.86633 8.80469L6.89368 5.75781H0.233521C0.0968018 5.75781 -0.000854492 5.66016 -0.000854492 5.52344V4.97656C-0.000854492 4.85938 0.0968018 4.74219 0.233521 4.74219H6.89368L3.86633 1.71484C3.76868 1.63672 3.76868 1.48047 3.86633 1.38281L4.25696 1.01172Z">
+                  </path>
+                </svg>
+              </span>
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer class="pt-[60px] lg:pt-[130px] bg-gray_CRM relative overflow-hidden">
+    <div class="container mx-auto grid grid-cols-4 md:grid-cols-8 xl:grid-cols-12 mb-20 gap-10 lg:gap-[88px]">
+      <div class="col-span-5" data-aos="fade-left" data-aos-delay="100">
+        <img src="assets/images/LOGGO1.png" alt="logo" />
+        <p class="max-w-[480px] text-paragraph mt-[30px] mb-6">
+          Churchman is the all-in-one church management platform trusted by
+          faith communities around the world. We help churches of every size
+          manage their people, finances, events, and ministry with simplicity
+          and grace.
+        </p>
+        <div class="flex gap-[15px]">
+          <a href="#" target="blank" aria-label="Facebook"
+            class="w-[46px] h-[46px] rounded-full flex justify-center items-center border border-[#6A4CFF26] overflow-hidden relative before:inline-block before:absolute before:z-0 before:w-full before:h-full before:bg-sf-purpel before:scale-x-0 group hover:before:scale-x-100 before:origin-right hover:before:origin-left before:transition-transform before:ease-out before:duration-300">
+            <span class="relative z-10">
+              <svg class="text-paragraph group-hover:text-white transition-all duration-300" width="11" height="16"
+                viewBox="0 0 11 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M10.6667 0H8.55556C5.79413 0 3.55556 2.23857 3.55556 5V6.22222H0V9.77778H3.55556V16H7.11111V9.77778H10.6667V6.22222H7.11111V4.55556C7.11111 4.00327 7.55883 3.55556 8.11111 3.55556H10.6667V0Z"
+                  fill="currentColor" />
+              </svg>
+            </span>
+          </a>
+          <a href="#" target="blank" aria-label="Twitter"
+            class="w-[46px] h-[46px] rounded-full flex justify-center items-center border border-[#6A4CFF26] overflow-hidden relative before:inline-block before:absolute before:z-0 before:w-full before:h-full before:bg-sf-purpel before:scale-x-0 group hover:before:scale-x-100 before:origin-right hover:before:origin-left before:transition-transform before:ease-out before:duration-300">
+            <span class="relative z-10">
+              <svg class="text-paragraph group-hover:text-white transition-all duration-300" width="19" height="17"
+                viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12.7642 0C10.5722 0 8.7953 1.86585 8.7953 4.1675C8.7953 4.5153 8.83587 4.85315 8.91232 5.17611C6.80469 5.17611 3.63013 4.74999 0.978868 2.09376C0.626315 1.74054 -0.0237835 1.9767 0.000670803 2.47516C0.393588 10.484 3.82353 12.8202 5.58986 12.9656C4.44926 14.0921 2.79242 14.9813 1.1252 15.3804C0.685191 15.4857 0.576494 15.9674 1.00675 16.1073C2.19973 16.4953 3.90729 16.6448 4.82642 16.67C11.3286 16.67 16.6134 11.1972 16.731 4.3991C17.5847 3.84394 18.1315 2.63855 18.4388 1.78464C18.5136 1.57667 18.1728 1.33436 17.9687 1.41931C17.331 1.68479 16.5214 1.74773 15.8318 1.52302C15.1039 0.593104 14 0 12.7642 0Z"
+                  fill="currentColor" />
+              </svg>
+            </span>
+          </a>
+          <a href="#" target="blank" aria-label="Instagram"
+            class="w-[46px] h-[46px] rounded-full flex justify-center items-center border border-[#6A4CFF26] overflow-hidden relative before:inline-block before:absolute before:z-0 before:w-full before:h-full before:bg-sf-purpel before:scale-x-0 group hover:before:scale-x-100 before:origin-right hover:before:origin-left before:transition-transform before:ease-out before:duration-300">
+            <span class="relative z-10">
+              <svg class="text-paragraph group-hover:text-white transition-all duration-300" width="17" height="17"
+                viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M5 0C2.23858 0 0 2.23858 0 5V11.33C0 14.0914 2.23858 16.33 5 16.33H11.33C14.0914 16.33 16.33 14.0914 16.33 11.33V5C16.33 2.23858 14.0914 0 11.33 0H5ZM13.0645 4.08222C13.5155 4.08222 13.881 3.71666 13.881 3.26572C13.881 2.81478 13.5155 2.44922 13.0645 2.44922C12.6136 2.44922 12.248 2.81478 12.248 3.26572C12.248 3.71666 12.6136 4.08222 13.0645 4.08222ZM12.247 8.16551C12.247 10.4202 10.4192 12.248 8.16453 12.248C5.90983 12.248 4.08203 10.4202 4.08203 8.16551C4.08203 5.91081 5.90983 4.08301 8.16453 4.08301C10.4192 4.08301 12.247 5.91081 12.247 8.16551ZM8.16532 10.6138C9.51814 10.6138 10.6148 9.51717 10.6148 8.16434C10.6148 6.81152 9.51814 5.71484 8.16532 5.71484C6.8125 5.71484 5.71582 6.81152 5.71582 8.16434C5.71582 9.51717 6.8125 10.6138 8.16532 10.6138Z"
+                  fill="currentColor" />
+              </svg>
+            </span>
+          </a>
+          <a href="#" target="blank" aria-label="YouTube"
+            class="w-[46px] h-[46px] rounded-full flex justify-center items-center border border-[#6A4CFF26] overflow-hidden relative before:inline-block before:absolute before:z-0 before:w-full before:h-full before:bg-sf-purpel before:scale-x-0 group hover:before:scale-x-100 before:origin-right hover:before:origin-left before:transition-transform before:ease-out before:duration-300">
+            <span class="relative z-10">
+              <svg class="text-paragraph group-hover:text-white transition-all duration-300" width="17" height="17"
+                viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M5 0C2.23858 0 0 2.23858 0 5V11.33C0 14.0914 2.23858 16.33 5 16.33H11.33C14.0914 16.33 16.33 14.0914 16.33 11.33V5C16.33 2.23858 14.0914 0 11.33 0H5ZM13.0645 4.08222C13.5155 4.08222 13.881 3.71666 13.881 3.26572C13.881 2.81478 13.5155 2.44922 13.0645 2.44922C12.6136 2.44922 12.248 2.81478 12.248 3.26572C12.248 3.71666 12.6136 4.08222 13.0645 4.08222ZM12.247 8.16551C12.247 10.4202 10.4192 12.248 8.16453 12.248C5.90983 12.248 4.08203 10.4202 4.08203 8.16551C4.08203 5.91081 5.90983 4.08301 8.16453 4.08301C10.4192 4.08301 12.247 5.91081 12.247 8.16551ZM8.16532 10.6138C9.51814 10.6138 10.6148 9.51717 10.6148 8.16434C10.6148 6.81152 9.51814 5.71484 8.16532 5.71484C6.8125 5.71484 5.71582 6.81152 5.71582 8.16434C5.71582 9.51717 6.8125 10.6138 8.16532 10.6138Z"
+                  fill="currentColor" />
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="col-span-2" data-aos="fade-up" data-aos-delay="200">
+        <h1 class="font-semibold text-22 text-black_21">Quick Links</h1>
+        <ul class="mt-3.5">
+          <li class="">
+            <a href="#hero">
+              <div
+                class="flex gap-2 items-center relative group font-medium text-paragraph hover:text-[#FF455B] leading-10 hover:underline transition-all duration-300 overflow-hidden">
+                <svg class="absolute -left-2 transition-all duration-300 group-hover:left-0" width="8" height="12"
+                  viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M7.57422 6.56641L2.44141 11.7695C2.26562 11.9453 1.98438 11.9453 1.84375 11.7695L1.14062 11.0664C0.964844 10.8906 0.964844 10.6445 1.14062 10.4688L5.28906 6.25L1.14062 2.06641C0.964844 1.89062 0.964844 1.60938 1.14062 1.46875L1.84375 0.765625C1.98438 0.589844 2.26562 0.589844 2.44141 0.765625L7.57422 5.96875C7.75 6.14453 7.75 6.39062 7.57422 6.56641Z"
+                    fill="currentColor" />
+                </svg>
+                <span class="group-hover:translate-x-4 transition-all duration-300">Home</span>
+              </div>
+            </a>
+          </li>
+          <li class="">
+            <a href="#about">
+              <div
+                class="flex gap-2 items-center relative group font-medium text-paragraph hover:text-[#FF455B] leading-10 hover:underline transition-all duration-300 overflow-hidden">
+                <svg class="absolute -left-2 transition-all duration-300 group-hover:left-0" width="8" height="12"
+                  viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M7.57422 6.56641L2.44141 11.7695C2.26562 11.9453 1.98438 11.9453 1.84375 11.7695L1.14062 11.0664C0.964844 10.8906 0.964844 10.6445 1.14062 10.4688L5.28906 6.25L1.14062 2.06641C0.964844 1.89062 0.964844 1.60938 1.14062 1.46875L1.84375 0.765625C1.98438 0.589844 2.26562 0.589844 2.44141 0.765625L7.57422 5.96875C7.75 6.14453 7.75 6.39062 7.57422 6.56641Z"
+                    fill="currentColor" />
+                </svg>
+                <span class="group-hover:translate-x-4 transition-all duration-300">About</span>
+              </div>
+            </a>
+          </li>
+          <li class="">
+            <a href="#features">
+              <div
+                class="flex gap-2 items-center relative group font-medium text-paragraph hover:text-[#FF455B] leading-10 hover:underline transition-all duration-300 overflow-hidden">
+                <svg class="absolute -left-2 transition-all duration-300 group-hover:left-0" width="8" height="12"
+                  viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M7.57422 6.56641L2.44141 11.7695C2.26562 11.9453 1.98438 11.9453 1.84375 11.7695L1.14062 11.0664C0.964844 10.8906 0.964844 10.6445 1.14062 10.4688L5.28906 6.25L1.14062 2.06641C0.964844 1.89062 0.964844 1.60938 1.14062 1.46875L1.84375 0.765625C1.98438 0.589844 2.26562 0.589844 2.44141 0.765625L7.57422 5.96875C7.75 6.14453 7.75 6.39062 7.57422 6.56641Z"
+                    fill="currentColor" />
+                </svg>
+                <span class="group-hover:translate-x-4 transition-all duration-300">Features</span>
+              </div>
+            </a>
+          </li>
+          <li class="">
+            <a href="#pricing">
+              <div
+                class="flex gap-2 items-center relative group font-medium text-paragraph hover:text-[#FF455B] leading-10 hover:underline transition-all duration-300 overflow-hidden">
+                <svg class="absolute -left-2 transition-all duration-300 group-hover:left-0" width="8" height="12"
+                  viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M7.57422 6.56641L2.44141 11.7695C2.26562 11.9453 1.98438 11.9453 1.84375 11.7695L1.14062 11.0664C0.964844 10.8906 0.964844 10.6445 1.14062 10.4688L5.28906 6.25L1.14062 2.06641C0.964844 1.89062 0.964844 1.60938 1.14062 1.46875L1.84375 0.765625C1.98438 0.589844 2.26562 0.589844 2.44141 0.765625L7.57422 5.96875C7.75 6.14453 7.75 6.39062 7.57422 6.56641Z"
+                    fill="currentColor" />
+                </svg>
+                <span class="group-hover:translate-x-4 transition-all duration-300">Pricing</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-span-2 md:col-span-4 xl:col-span-2" data-aos="fade-up" data-aos-delay="300">
+        <h1 class="font-semibold text-22 text-black_21">Support</h1>
+        <ul class="mt-3.5">
+          <li class="">
+            <a href="help.html">
+              <div
+                class="flex gap-2 items-center relative group font-medium text-paragraph hover:text-[#FF455B] leading-10 hover:underline transition-all duration-300 overflow-hidden">
+                <svg class="absolute -left-2 transition-all duration-300 group-hover:left-0" width="8" height="12"
+                  viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M7.57422 6.56641L2.44141 11.7695C2.26562 11.9453 1.98438 11.9453 1.84375 11.7695L1.14062 11.0664C0.964844 10.8906 0.964844 10.6445 1.14062 10.4688L5.28906 6.25L1.14062 2.06641C0.964844 1.89062 0.964844 1.60938 1.14062 1.46875L1.84375 0.765625C1.98438 0.589844 2.26562 0.589844 2.44141 0.765625L7.57422 5.96875C7.75 6.14453 7.75 6.39062 7.57422 6.56641Z"
+                    fill="currentColor" />
+                </svg>
+                <span class="group-hover:translate-x-4 transition-all duration-300">Help</span>
+              </div>
+            </a>
+          </li>
+          <li class="">
+            <a href="faq.html">
+              <div
+                class="flex gap-2 items-center relative group font-medium text-paragraph hover:text-[#FF455B] leading-10 hover:underline transition-all duration-300 overflow-hidden">
+                <svg class="absolute -left-2 transition-all duration-300 group-hover:left-0" width="8" height="12"
+                  viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M7.57422 6.56641L2.44141 11.7695C2.26562 11.9453 1.98438 11.9453 1.84375 11.7695L1.14062 11.0664C0.964844 10.8906 0.964844 10.6445 1.14062 10.4688L5.28906 6.25L1.14062 2.06641C0.964844 1.89062 0.964844 1.60938 1.14062 1.46875L1.84375 0.765625C1.98438 0.589844 2.26562 0.589844 2.44141 0.765625L7.57422 5.96875C7.75 6.14453 7.75 6.39062 7.57422 6.56641Z"
+                    fill="currentColor" />
+                </svg>
+                <span class="group-hover:translate-x-4 transition-all duration-300">FAQs & Help</span>
+              </div>
+            </a>
+          </li>
+          <li class="">
+            <a href="privacy.html">
+              <div
+                class="flex gap-2 items-center relative group font-medium text-paragraph hover:text-[#FF455B] leading-10 hover:underline transition-all duration-300 overflow-hidden">
+                <svg class="absolute -left-2 transition-all duration-300 group-hover:left-0" width="8" height="12"
+                  viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M7.57422 6.56641L2.44141 11.7695C2.26562 11.9453 1.98438 11.9453 1.84375 11.7695L1.14062 11.0664C0.964844 10.8906 0.964844 10.6445 1.14062 10.4688L5.28906 6.25L1.14062 2.06641C0.964844 1.89062 0.964844 1.60938 1.14062 1.46875L1.84375 0.765625C1.98438 0.589844 2.26562 0.589844 2.44141 0.765625L7.57422 5.96875C7.75 6.14453 7.75 6.39062 7.57422 6.56641Z"
+                    fill="currentColor" />
+                </svg>
+                <span class="group-hover:translate-x-4 transition-all duration-300">Privacy Policy</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-span-3" data-aos="fade-up" data-aos-delay="400">
+        <h1 class="font-semibold text-22 text-black_21">Contact Us</h1>
+        <div
+          class="flex gap-2 items-center relative group font-medium text-paragraph hover:text-[#FF455B] hover:underline transition-all duration-300 mt-3.5">
+          <span class="transition-all duration-300">
+            Greater Accra, Accra - Ghana
+          </span>
+        </div>
+        <div
+          class="flex gap-2 items-center relative group font-medium text-paragraph hover:text-[#FF455B] hover:underline transition-all duration-300 mt-3.5">
+          <span class="transition-all duration-300">
+            churchman2026@gmail.com <br />
+            +233 57 554 0404 <br />
+            +233 54 678 5064
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="container h-[80px] md:h-[65px] border-t border-[#EBE6FF] relative z-10">
+      <div class="theme-container mx-auto h-full">
+        <div class="w-full h-full flex flex-col sm:flex-row justify-between items-center">
+          <span class="text-paragraph pt-3 md:pt-0">2025 © All rights reserved by
+            <b class="text-[#FF455B]">Churchman</b></span>
+          <div class="relative">
+            <a href="#hero" aria-label="go top"
+              class="w-[55px] h-[55px] rounded-full bg-sf-blue flex justify-center items-center bg-blue-sass absolute -top-[120px] -right-[150px] md:left-0 -md:translate-x-[50%] md:right-0 md:-top-[60px]">
+              <span>
+                <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M0.187988 8.1875C0.0317383 8.0625 0.0317383 7.8125 0.187988 7.65625L6.71924 1.125C6.87549 0.96875 7.09424 0.96875 7.25049 1.125L13.7817 7.65625C13.938 7.8125 13.938 8.0625 13.7817 8.1875L13.188 8.8125C13.0317 8.96875 12.7817 8.96875 12.6567 8.8125L7.81299 3.96875V14.625C7.81299 14.8438 7.62549 15 7.43799 15H6.56299C6.34424 15 6.18799 14.8438 6.18799 14.625V3.96875L1.31299 8.8125C1.18799 8.96875 0.937988 8.96875 0.781738 8.8125L0.187988 8.1875Z"
+                    fill="white" />
+                </svg>
+              </span>
+            </a>
+          </div>
+          <ul class="flex sm:space-x-6 items-center">
+            <li class="hover:text-[#FF455B] hover:underline common-transition text-paragraph font-medium">
+              <a href="privacy.html">Privacy Policy</a>
+            </li>
+            <li class="text-paragraph font-medium">|</li>
+            <li class="hover:text-[#FF455B] hover:underline common-transition text-paragraph font-medium">
+              <a href="#">Terms & Conditions</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- NEW: script to update favicon and OG/meta + in-page JSON-LD preview when a file is selected.
+         This only updates the page locally — to have search engines pick up the logo you must host the image
+         at a public URL and update the JSON-LD 'logo' value in the <head> above to that absolute URL. -->
+  <script>
+    (function () {
+      const input = document.getElementById('siteLogoUpload');
+      input?.addEventListener('change', async function (e) {
+        const file = e.target.files && e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = function (ev) {
+          const dataUrl = ev.target.result;
+
+          // update favicon link (creates or replaces)
+          let favicon = document.querySelector("link[rel='icon']");
+          if (!favicon) {
+            favicon = document.createElement('link');
+            favicon.rel = 'icon';
+            document.head.appendChild(favicon);
+          }
+          favicon.href = dataUrl;
+
+          // update og:image meta
+          let ogImage = document.querySelector("meta[property='og:image']");
+          if (!ogImage) {
+            ogImage = document.createElement('meta');
+            ogImage.setAttribute('property', 'og:image');
+            document.head.appendChild(ogImage);
+          }
+          ogImage.content = dataUrl;
+
+          // Update in-page JSON-LD (best-effort) so preview reflects change while browsing locally
+          const ldScript = document.querySelector('script[type="application/ld+json"]');
+          if (ldScript) {
+            try {
+              const json = JSON.parse(ldScript.textContent);
+              if (json && json['@graph']) {
+                json['@graph'].forEach(entry => {
+                  if (entry.logo) entry.logo = dataUrl;
+                  if (entry.image) entry.image = dataUrl;
+                });
+                ldScript.textContent = JSON.stringify(json, null, 2);
+              }
+            } catch (err) {
+              // ignore parse errors
+            }
+          }
+          alert('Logo preview updated locally. To have the logo show in search results, upload this image to your public server and update the JSON-LD "logo" URL in the <head> to the image\'s absolute URL.');
+        };
+        reader.readAsDataURL(file);
+      });
+    })();
+  </script>
+
+  <script src="assets/js/jquery-3.6.3.min.js"></script>
+  <script src="assets/js/aos.js"></script>
+  <script src="assets/js/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/plugin.js"></script>
+</body>
+
+</html>

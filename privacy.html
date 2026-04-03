@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy - Churchman</title>
+  <link rel="icon" type="image/png" href="assets/images/logoo-1.png" />
+  <link rel="stylesheet" href="src/output.css" />
+  <link rel="stylesheet" href="src/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Space Grotesk", sans-serif; background: #fff; color: #1d1f20; }
+
+    /* NAV */
+    .navbar { background:#fff; position:fixed; top:0; left:0; right:0; z-index:50; box-shadow:0 2px 16px rgba(106,76,255,.08); }
+    .nav-inner { max-width:1280px; margin:0 auto; padding:18px 24px; display:flex; align-items:center; justify-content:space-between; }
+    .nav-logo img { width:100px; display:block; }
+    .nav-links { display:flex; gap:40px; list-style:none; }
+    .nav-links a { font-size:15px; font-weight:500; color:#1d1f20; text-decoration:none; transition:color .2s; }
+    .nav-links a:hover { color:#FF455B; }
+    .nav-btns { display:flex; gap:14px; align-items:center; }
+    .btn-signup { border:2px solid #1d1f20; padding:9px 22px; font-size:14px; font-weight:600; color:#1d1f20; text-decoration:none; transition:all .2s; }
+    .btn-signup:hover { background:#1d1f20; color:#fff; }
+    .btn-signin { background:linear-gradient(90deg,#FF455B,#515EFE); padding:9px 22px; font-size:14px; font-weight:600; color:#fff; text-decoration:none; transition:opacity .2s; }
+    .btn-signin:hover { opacity:.88; }
+    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
+    .hamburger span { display:block; width:24px; height:2px; background:#1d1f20; border-radius:2px; }
+    .mobile-menu { display:none; flex-direction:column; background:#1B1B1B; padding:20px 24px 28px; }
+    .mobile-menu.open { display:flex; }
+    .mobile-menu a { color:#fff; text-decoration:none; font-size:15px; font-weight:500; padding:12px 0; border-bottom:1px solid rgba(255,255,255,.08); }
+    .mobile-menu-btns { display:flex; flex-direction:column; gap:10px; margin-top:16px; }
+
+    /* HERO */
+    .policy-hero { background:#1B1B1B; padding:120px 24px 60px; text-align:center; }
+    .policy-hero span { color:#FF455B; font-size:15px; font-weight:600; display:block; margin-bottom:12px; }
+    .policy-hero h1 { color:#fff; font-size:clamp(26px,4.5vw,48px); font-weight:700; margin-bottom:16px; line-height:1.2; }
+    .policy-hero p { color:rgba(255,255,255,.6); font-size:16px; max-width:560px; margin:0 auto; line-height:1.7; }
+    .policy-date { display:inline-flex; align-items:center; gap:8px; margin-top:24px; background:rgba(255,255,255,.08); padding:10px 20px; color:rgba(255,255,255,.7); font-size:14px; }
+
+    /* LAYOUT */
+    .policy-layout { max-width:1100px; margin:0 auto; padding:70px 24px 80px; display:grid; grid-template-columns:240px 1fr; gap:60px; align-items:start; }
+
+    /* STICKY SIDEBAR */
+    .policy-sidebar { position: sticky; top: 90px; }
+    .sidebar-label { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:#888; margin-bottom:16px; }
+    .sidebar-nav { list-style:none; }
+    .sidebar-nav li { margin-bottom:4px; }
+    .sidebar-nav a { display:block; padding:9px 14px; font-size:14px; font-weight:500; color:#666; text-decoration:none; border-left:2px solid transparent; transition:all .2s; }
+    .sidebar-nav a:hover, .sidebar-nav a.active { color:#FF455B; border-left-color:#FF455B; background:#fff5f6; }
+    .sidebar-box { margin-top:32px; background:#f8f9ff; padding:20px; border-left:3px solid #057AFD; }
+    .sidebar-box h4 { font-size:14px; font-weight:700; color:#1d1f20; margin-bottom:8px; }
+    .sidebar-box p { font-size:13px; color:#888; line-height:1.6; margin-bottom:12px; }
+    .sidebar-box a { font-size:13px; font-weight:600; color:#FF455B; text-decoration:none; }
+
+    /* CONTENT */
+    .policy-content section { margin-bottom:56px; scroll-margin-top:90px; }
+    .section-tag { display:inline-block; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:#FF455B; background:#FFF0F1; padding:4px 10px; margin-bottom:12px; }
+    .policy-content h2 { font-size:clamp(20px,3vw,28px); font-weight:700; color:#1d1f20; margin-bottom:18px; padding-bottom:14px; border-bottom:1px solid #EBEBEB; }
+    .policy-content h3 { font-size:17px; font-weight:700; color:#1d1f20; margin:28px 0 10px; }
+    .policy-content p { font-size:15px; color:#555; line-height:1.8; margin-bottom:16px; }
+    .policy-content ul, .policy-content ol { margin:10px 0 16px 20px; }
+    .policy-content ul li, .policy-content ol li { font-size:15px; color:#555; line-height:1.8; margin-bottom:8px; }
+    .policy-content a { color:#FF455B; text-decoration:none; font-weight:600; }
+    .policy-content a:hover { text-decoration:underline; }
+
+    /* HIGHLIGHT BOXES */
+    .info-box { background:#EFF5FE; border-left:4px solid #057AFD; padding:18px 20px; margin:20px 0; }
+    .info-box p { margin:0; color:#1d1f20; font-size:14px; line-height:1.7; }
+    .info-box strong { color:#057AFD; }
+    .warn-box { background:#FFF5F6; border-left:4px solid #FF455B; padding:18px 20px; margin:20px 0; }
+    .warn-box p { margin:0; color:#1d1f20; font-size:14px; line-height:1.7; }
+
+    /* DATA TABLE */
+    .data-table { width:100%; border-collapse:collapse; margin:20px 0 28px; font-size:14px; overflow-x:auto; display:block; }
+    .data-table th { background:#1d1f20; color:#fff; padding:12px 16px; text-align:left; font-weight:600; white-space:nowrap; }
+    .data-table td { padding:12px 16px; border-bottom:1px solid #EBEBEB; color:#555; vertical-align:top; }
+    .data-table tr:last-child td { border-bottom:none; }
+    .data-table tr:nth-child(even) td { background:#f8f9ff; }
+
+    /* RIGHTS CARDS */
+    .rights-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin:20px 0; }
+    .right-card { border:1px solid #EBEBEB; padding:20px; }
+    .right-card h4 { font-size:15px; font-weight:700; color:#1d1f20; margin-bottom:8px; display:flex; align-items:center; gap:8px; }
+    .right-card h4::before { content:''; display:inline-block; width:8px; height:8px; background:#FF455B; flex-shrink:0; }
+    .right-card p { font-size:14px; color:#888; line-height:1.6; }
+
+    /* CONTACT POLICY */
+    .contact-policy { background:#1B1B1B; padding:48px 32px; margin-top:40px; }
+    .contact-policy h3 { color:#fff; font-size:20px; font-weight:700; margin-bottom:12px; }
+    .contact-policy p { color:rgba(255,255,255,.65); font-size:15px; line-height:1.7; margin-bottom:20px; }
+    .contact-policy .contact-list { list-style:none; margin:0; padding:0; }
+    .contact-policy .contact-list li { color:rgba(255,255,255,.8); font-size:14px; padding:8px 0; border-bottom:1px solid rgba(255,255,255,.08); display:flex; align-items:flex-start; gap:10px; flex-wrap:wrap; }
+    .contact-policy .contact-list li:last-child { border-bottom:none; }
+    .contact-policy .contact-list li strong { color:#FF455B; min-width:90px; }
+
+    /* MINI FOOTER */
+    .mini-footer { background:#f5f5f5; padding:24px; text-align:center; }
+    .mini-footer p { font-size:14px; color:#888; }
+    .mini-footer a { color:#FF455B; text-decoration:none; font-weight:600; }
+
+    @media (max-width:900px) {
+      .policy-layout { grid-template-columns:1fr; gap:32px; }
+      .policy-sidebar { position:static; }
+      .rights-grid { grid-template-columns:1fr; }
+    }
+    @media (max-width:640px) {
+      .nav-links,.nav-btns { display:none; }
+      .hamburger { display:flex; }
+      .policy-hero { padding:100px 16px 48px; }
+      .policy-layout { padding:40px 16px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html"><img src="assets/images/LOGGO1.png" alt="Churchman" /></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-btns">
+      <a href="https://web.churchmann.org/auth/signup" class="btn-signup">Sign Up Free</a>
+      <a href="https://web.churchmann.org" class="btn-signin">Sign In</a>
+    </div>
+    <button class="hamburger" id="hamBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#features">Features</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="index.html#contact">Contact</a>
+    <div class="mobile-menu-btns">
+      <a href="https://web.churchmann.org/auth/signup" class="btn-signup">Sign Up Free</a>
+      <a href="https://web.churchmann.org" class="btn-signin">Sign In</a>
+    </div>
+  </div>
+</nav>
+
+<section class="policy-hero">
+  <span>Legal</span>
+  <h1>Privacy Policy</h1>
+  <p>We are committed to protecting the privacy of your congregation and handling all personal data with the utmost care and transparency.</p>
+  <div class="policy-date">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    Last updated: January 1, 2025 &nbsp;|&nbsp; Effective: January 1, 2025
+  </div>
+</section>
+
+<div class="policy-layout">
+  <aside class="policy-sidebar">
+    <div class="sidebar-label">On This Page</div>
+    <ul class="sidebar-nav" id="sidebarNav">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#information-collected">Information We Collect</a></li>
+      <li><a href="#how-we-use">How We Use Your Data</a></li>
+      <li><a href="#sharing">Sharing &amp; Disclosure</a></li>
+      <li><a href="#storage">Data Storage &amp; Security</a></li>
+      <li><a href="#retention">Data Retention</a></li>
+      <li><a href="#cookies">Cookies &amp; Tracking</a></li>
+      <li><a href="#rights">Your Rights</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#third-party">Third-Party Links</a></li>
+      <li><a href="#changes">Changes to This Policy</a></li>
+      <li><a href="#contact-us">Contact Us</a></li>
+    </ul>
+    <div class="sidebar-box">
+      <h4>Privacy questions?</h4>
+      <p>Our team is ready to help with any data concerns.</p>
+      <a href="mailto:churchman2026@gmail.com">Email us directly</a>
+    </div>
+  </aside>
+
+  <main class="policy-content">
+
+    <section id="overview">
+      <div class="section-tag">Introduction</div>
+      <h2>Overview</h2>
+      <p>Churchman ("we", "us", or "our") operates the Churchman church management platform at <a href="https://web.churchmann.org">web.churchmann.org</a>. This Privacy Policy explains how we collect, use, disclose, and safeguard personal information when you use our services.</p>
+      <p>By registering for and using Churchman, you agree to the collection and use of information in accordance with this policy.</p>
+      <div class="info-box"><p><strong>Your data belongs to you.</strong> Churchman acts as a data processor on behalf of your church. We process your congregation's data only according to your instructions and this policy.</p></div>
+      <p>We are based in Accra, Ghana and our services are subject to Ghanaian data protection laws, including the Data Protection Act, 2012 (Act 843).</p>
+    </section>
+
+    <section id="information-collected">
+      <div class="section-tag">Data Collection</div>
+      <h2>Information We Collect</h2>
+      <h3>a) Information You Provide Directly</h3>
+      <p>When your church adds members to the platform, the following may be collected:</p>
+      <ul>
+        <li>Full name, email address, phone number, and postal address</li>
+        <li>Date of birth, gender, and marital status (optional)</li>
+        <li>Profile photo (optional), membership date and status</li>
+        <li>Family group relationships and attendance history</li>
+        <li>Giving and pledge records</li>
+        <li>Prayer requests, pastoral notes</li>
+        <li>Job listings (Church JobHub) and voting participation</li>
+      </ul>
+      <h3>b) Account and Billing Information</h3>
+      <ul>
+        <li>Church name, registered address, and contact details</li>
+        <li>Payment information (processed securely — we do not store full card numbers)</li>
+        <li>Subscription plan history and invoices</li>
+      </ul>
+      <h3>c) Automatically Collected Data</h3>
+      <ul>
+        <li>IP address and approximate location (country/region)</li>
+        <li>Browser type, version, and operating system</li>
+        <li>Pages visited, features used, and session duration</li>
+        <li>Device identifiers and session tokens</li>
+      </ul>
+      <table class="data-table">
+        <thead><tr><th>Data Category</th><th>Examples</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr><td>Identity Data</td><td>Name, date of birth, gender</td><td>Provided by church / member</td></tr>
+          <tr><td>Contact Data</td><td>Email, phone, address</td><td>Provided by church / member</td></tr>
+          <tr><td>Financial Data</td><td>Giving records, payment info</td><td>Provided by church / payment processor</td></tr>
+          <tr><td>Attendance Data</td><td>Check-in records per service</td><td>Generated via platform</td></tr>
+          <tr><td>Technical Data</td><td>IP address, browser, device</td><td>Automatically collected</td></tr>
+          <tr><td>Spiritual Data</td><td>Prayer requests, pastoral notes</td><td>Provided by member / pastor</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="how-we-use">
+      <div class="section-tag">Data Usage</div>
+      <h2>How We Use Your Data</h2>
+      <ul>
+        <li><strong>Service Delivery:</strong> To operate the platform, manage church accounts, process payments, and enable all core features.</li>
+        <li><strong>Communication:</strong> To send transactional emails, service updates, and — where consented — product news.</li>
+        <li><strong>Support:</strong> To respond to enquiries, troubleshoot issues, and provide customer support.</li>
+        <li><strong>Security:</strong> To detect fraud, monitor for abuse, and protect the platform.</li>
+        <li><strong>Analytics:</strong> To understand usage patterns and improve the platform using aggregated, anonymised data.</li>
+        <li><strong>Legal Obligations:</strong> To comply with applicable laws and lawful requests from authorities.</li>
+      </ul>
+      <div class="warn-box"><p><strong>We do not sell your personal data</strong> or your congregation's data to third parties. We do not use member data for targeted advertising outside the Churchman platform.</p></div>
+    </section>
+
+    <section id="sharing">
+      <div class="section-tag">Third Parties</div>
+      <h2>Sharing &amp; Disclosure</h2>
+      <p>We do not sell, trade, or rent personal data. We may share information only in limited circumstances:</p>
+      <h3>Service Providers</h3>
+      <p>We engage trusted third-party providers bound by confidentiality agreements, including cloud hosting, payment processors, SMS/email delivery, and analytics tools.</p>
+      <h3>Legal Requirements</h3>
+      <p>We may disclose data if required by law, court order, or government authority, or to protect the safety of our users or the public.</p>
+      <h3>Business Transfers</h3>
+      <p>In the event of a merger or acquisition, we will notify affected churches and ensure continued protection of personal data under terms no less protective than this policy.</p>
+    </section>
+
+    <section id="storage">
+      <div class="section-tag">Security</div>
+      <h2>Data Storage &amp; Security</h2>
+      <ul>
+        <li><strong>Encryption in transit:</strong> All data is transmitted using TLS 1.2+ encryption.</li>
+        <li><strong>Encryption at rest:</strong> Sensitive data is encrypted using AES-256.</li>
+        <li><strong>Access controls:</strong> Role-based access with logged, approved access to production data.</li>
+        <li><strong>Regular backups:</strong> Automated daily backups with point-in-time recovery.</li>
+        <li><strong>Incident response:</strong> Churches are notified within 72 hours of any breach affecting their data.</li>
+      </ul>
+      <div class="info-box"><p><strong>No method of internet transmission is 100% secure.</strong> We encourage church admins to use strong, unique passwords and enable two-factor authentication.</p></div>
+    </section>
+
+    <section id="retention">
+      <div class="section-tag">Retention</div>
+      <h2>Data Retention</h2>
+      <ul>
+        <li>Active account data is retained for the duration of your subscription.</li>
+        <li>Upon cancellation, all church data is permanently deleted within <strong>30 days</strong> of your deletion request.</li>
+        <li>Financial transaction records may be retained for up to <strong>7 years</strong> for legal compliance.</li>
+        <li>Anonymised, aggregated analytics data may be retained indefinitely.</li>
+      </ul>
+    </section>
+
+    <section id="cookies">
+      <div class="section-tag">Cookies</div>
+      <h2>Cookies &amp; Tracking Technologies</h2>
+      <ul>
+        <li><strong>Essential cookies:</strong> Required for platform operation, including session authentication.</li>
+        <li><strong>Functional cookies:</strong> Remember your preferences such as language settings.</li>
+        <li><strong>Analytics cookies:</strong> Aggregated, anonymised usage data to help improve the platform.</li>
+      </ul>
+      <p>The <strong>Free plan</strong> includes Google Ads, which may use Google's advertising cookies. Users on paid plans (Starter, Growth, Enterprise) do not see Google Ads.</p>
+    </section>
+
+    <section id="rights">
+      <div class="section-tag">Your Rights</div>
+      <h2>Your Rights</h2>
+      <p>You have the following rights regarding personal data held on Churchman:</p>
+      <div class="rights-grid">
+        <div class="right-card"><h4>Right of Access</h4><p>Request a copy of the personal data we hold about you or your church's members.</p></div>
+        <div class="right-card"><h4>Right to Rectification</h4><p>Request correction of inaccurate or incomplete personal data at any time via your dashboard.</p></div>
+        <div class="right-card"><h4>Right to Erasure</h4><p>Request deletion of personal data. Closing an account triggers full deletion within 30 days.</p></div>
+        <div class="right-card"><h4>Right to Data Portability</h4><p>Export your church's data at any time in standard formats (CSV, PDF) from the Settings menu.</p></div>
+        <div class="right-card"><h4>Right to Object</h4><p>Object to processing for direct marketing. Opt-out links are included in all marketing emails.</p></div>
+        <div class="right-card"><h4>Right to Restrict Processing</h4><p>Request restriction of processing while a dispute or review is in progress.</p></div>
+      </div>
+      <p style="margin-top:20px;">To exercise any of these rights, contact us at <a href="mailto:churchman2026@gmail.com">churchman2026@gmail.com</a>. We will respond within <strong>30 days</strong>.</p>
+    </section>
+
+    <section id="children">
+      <div class="section-tag">Minors</div>
+      <h2>Children's Privacy</h2>
+      <p>Where children's data (individuals under 18) is entered into the platform, it is the church's responsibility as data controller to ensure appropriate parental or guardian consent has been obtained. Churchman provides role-based access controls to restrict children's records to authorised staff only.</p>
+      <p>Children under 13 may not create personal accounts directly. If you become aware that a child under 13 has registered independently, please contact us at <a href="mailto:churchman2026@gmail.com">churchman2026@gmail.com</a> immediately.</p>
+    </section>
+
+    <section id="third-party">
+      <div class="section-tag">External Links</div>
+      <h2>Third-Party Links</h2>
+      <p>The Churchman platform may contain links to third-party websites. This Privacy Policy does not apply to those external sites. We encourage you to review the privacy policies of any third-party sites you visit. We have no control over and assume no responsibility for the content or practices of third-party services.</p>
+    </section>
+
+    <section id="changes">
+      <div class="section-tag">Updates</div>
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. When we make material changes, we will update the "Last updated" date, send notification emails to all church administrators, and display a prominent notice in the dashboard for 30 days.</p>
+      <p>Continued use of the platform after the effective date of changes constitutes your acceptance of the updated policy.</p>
+    </section>
+
+    <section id="contact-us">
+      <div class="section-tag">Contact</div>
+      <h2>Contact Us</h2>
+      <p>If you have any questions, concerns, or requests related to this Privacy Policy or the handling of personal data, please contact us.</p>
+      <div class="contact-policy">
+        <h3>Data Privacy Contact</h3>
+        <p>We are committed to resolving privacy concerns promptly and transparently.</p>
+        <ul class="contact-list">
+          <li><strong>Email:</strong> churchman2026@gmail.com</li>
+          <li><strong>Phone:</strong> +233 57 554 0404 &nbsp;|&nbsp; +233 54 678 5064</li>
+          <li><strong>Address:</strong> Greater Accra, Accra, Ghana</li>
+          <li><strong>Hours:</strong> Monday to Friday, 8:00 AM to 6:00 PM GMT</li>
+          <li><strong>Response time:</strong> We aim to respond to all privacy enquiries within 5 business days.</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<div class="mini-footer">
+  <p>2025 &copy; All rights reserved by <a href="index.html">Churchman</a> &nbsp;|&nbsp; <a href="faqs.html">FAQs</a> &nbsp;|&nbsp; <a href="help.html">Help Centre</a> &nbsp;|&nbsp; <a href="index.html#contact">Contact</a></p>
+</div>
+
+<script>
+  document.getElementById('hamBtn').addEventListener('click', function(){
+    document.getElementById('mobileMenu').classList.toggle('open');
+  });
+  const sections = document.querySelectorAll('.policy-content section[id]');
+  const sideLinks = document.querySelectorAll('#sidebarNav a');
+  window.addEventListener('scroll', function(){
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 110) current = s.id; });
+    sideLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + current); });
+  });
+</script>
+</body>
+</html>
