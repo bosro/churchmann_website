@@ -89,11 +89,15 @@
         "@id": "https://churchmann.org/#website",
         "url": "https://churchmann.org/",
         "name": "Churchman",
+        "alternateName": ["Churchmann", "Churchman Ghana", "Churchmann.org"],
         "description": "Church management software for Ghana and West Africa",
         "publisher": { "@id": "https://churchmann.org/#organization" },
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "https://churchmann.org/?s={search_term_string}",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://churchmann.org/faq.html?s={search_term_string}"
+          },
           "query-input": "required name=search_term_string"
         }
       },
@@ -181,6 +185,42 @@
             }
           }
         ]
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": "Features",
+        "url": "https://churchmann.org/#features",
+        "description": "Church management features including member database, giving, attendance, and events"
+      },
+      {
+        "@type": "SiteNavigationElement", 
+        "name": "Pricing",
+        "url": "https://churchmann.org/#pricing",
+        "description": "Free, Starter, Growth and Enterprise plans for churches of all sizes"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": "Sign Up Free",
+        "url": "https://web.churchmann.org/auth/signup",
+        "description": "Create a free Churchman church management account"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": "FAQs",
+        "url": "https://churchmann.org/faq.html",
+        "description": "Frequently asked questions about Churchman"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": "Help Center",
+        "url": "https://churchmann.org/help.html",
+        "description": "Support and guides for using Churchman"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": "Privacy Policy",
+        "url": "https://churchmann.org/privacy.html",
+        "description": "Churchman privacy policy and data protection"
       }
     ]
   }
@@ -1188,8 +1228,9 @@
           Churchman is the all-in-one church management platform trusted by
           faith communities around the world. We help churches of every size
           manage their people, finances, events, and ministry with simplicity
-          and grace.
+          and grace. <span>Visit us at <strong>churchmann.org</strong></span>
         </p>
+
         <div class="flex gap-[15px]">
           <a href="#" target="blank" aria-label="Facebook"
             class="w-[46px] h-[46px] rounded-full flex justify-center items-center border border-[#6A4CFF26] overflow-hidden relative before:inline-block before:absolute before:z-0 before:w-full before:h-full before:bg-sf-purpel before:scale-x-0 group hover:before:scale-x-100 before:origin-right hover:before:origin-left before:transition-transform before:ease-out before:duration-300">
