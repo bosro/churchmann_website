@@ -12,31 +12,12 @@
   var CACHE_KEY = 'cm_public_plans_v1', CACHE_MS = 5 * 60 * 1000;
 
 
-  // Self-contained styles: the homepage does not load seo-pages.css, so the cards carry their own CSS.
-  (function injectCss() {
-    if (document.getElementById('lp-css')) return;
-    var st = document.createElement('style'); st.id = 'lp-css';
-    st.textContent = [
-      '.lp-wrap{margin-top:8px;font-family:inherit;text-align:center}',
-      '.lp-toggle{display:inline-flex;background:#f3f4f8;border:1px solid #e3e5ee;border-radius:999px;padding:4px;margin:0 0 26px}',
-      '.lp-toggle button{border:0;background:transparent;padding:9px 22px;border-radius:999px;font:600 14px/1 inherit;font-family:inherit;cursor:pointer;color:#5b6070}',
-      '.lp-toggle button.on{background:#0e0b26;color:#fff}',
-      '.lp-grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));align-items:stretch;text-align:left}',
-      '.lp-card{position:relative;border:1px solid #e3e5ee;border-radius:18px;padding:26px 24px;background:#fff;color:#0e0b26;display:flex;flex-direction:column;box-shadow:0 6px 24px rgba(14,11,38,.06)}',
-      '.lp-card.lp-pop{background:#0e0b26;color:#fff;border-color:#0e0b26;box-shadow:0 12px 34px rgba(14,11,38,.28)}',
-      '.lp-badge{position:absolute;top:-12px;right:18px;background:#FF455B;color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px}',
-      '.lp-name{margin:0;font-size:20px;font-weight:700;color:inherit}',
-      '.lp-price{margin:12px 0 4px;color:inherit}.lp-amt{font-size:36px;font-weight:800;letter-spacing:-.02em}.lp-per{color:#6b7080;font-size:15px}',
-      '.lp-pop .lp-per,.lp-pop .lp-sub{color:#c9cbe0}',
-      '.lp-sub{margin:0 0 18px;color:#6b7080;font-size:14px;line-height:1.45}',
-      '.lp-cta{display:block;text-align:center;text-decoration:none;font-weight:600;padding:12px;border-radius:999px;background:#0e0b26;color:#fff;margin-bottom:20px}',
-      '.lp-pop .lp-cta{background:#FF455B}',
-      '.lp-list{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:14px;line-height:1.4;color:inherit}',
-      '.lp-list li{padding-left:26px;position:relative}',
-      ".lp-list li:before{content:'';position:absolute;left:0;top:2px;width:16px;height:16px;border-radius:50%;background:#5B2BB5 url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E\") center/10px no-repeat}",
-      '.lp-note{font-size:13px;color:#6b7080;margin-top:14px}'
-    ].join('\n');
-    document.head.appendChild(st);
+  // Styles live in assets/css/pricing-live.css. If the page did not link it, load it here (same folder layout as this script).
+  (function ensureCss() {
+    if (document.querySelector('link[href*="pricing-live.css"]')) return;
+    var src = (document.currentScript && document.currentScript.src) || '';
+    var href = src ? src.replace(/\/js\/[^\/?#]*(\?.*)?$/, '/css/pricing-live.css?v=3') : '/assets/css/pricing-live.css?v=3';
+    var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = href; document.head.appendChild(l);
   })();
 
   var hosts = document.querySelectorAll('[data-live-plans]');
