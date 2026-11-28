@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://churchmann.org/</loc><lastmod>2026-11-24</lastmod><priority>1.0</priority></url>
-  <url><loc>https://churchmann.org/features.html</loc><lastmod>2026-11-24</lastmod><priority>0.9</priority></url>
-  <url><loc>https://churchmann.org/pricing.html</loc><lastmod>2026-11-24</lastmod><priority>0.9</priority></url>
-  <url><loc>https://churchmann.org/church-management-software-ghana.html</loc><lastmod>2026-11-24</lastmod><priority>0.9</priority></url>
-  <url><loc>https://churchmann.org/faq.html</loc><lastmod>2026-11-24</lastmod><priority>0.7</priority></url>
-  <url><loc>https://churchmann.org/help.html</loc><lastmod>2026-11-24</lastmod><priority>0.6</priority></url>
-  <url><loc>https://churchmann.org/privacy.html</loc><lastmod>2026-11-24</lastmod><priority>0.3</priority></url>
-  <url><loc>https://churchmann.org/terms.html</loc><lastmod>2026-11-24</lastmod><priority>0.3</priority></url>
-  <url><loc>https://churchmann.org/church-member-management.html</loc><lastmod>2026-11-24</lastmod><priority>0.8</priority></url>
-  <url><loc>https://churchmann.org/church-giving-and-tithes.html</loc><lastmod>2026-11-24</lastmod><priority>0.8</priority></url>
-  <url><loc>https://churchmann.org/church-sms-and-email.html</loc><lastmod>2026-11-24</lastmod><priority>0.8</priority></url>
-  <url><loc>https://churchmann.org/church-attendance-tracking.html</loc><lastmod>2026-11-24</lastmod><priority>0.8</priority></url>
-  <url><loc>https://churchmann.org/church-voting-and-awards.html</loc><lastmod>2026-11-24</lastmod><priority>0.8</priority></url>
-  <url><loc>https://churchmann.org/prayer-requests.html</loc><lastmod>2026-11-24</lastmod><priority>0.8</priority></url>
-  <url><loc>https://churchmann.org/church-website-builder.html</loc><lastmod>2026-11-24</lastmod><priority>0.8</priority></url>
-  <url><loc>https://churchmann.org/multi-branch-church-management.html</loc><lastmod>2026-11-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://churchmann.org/</loc><lastmod>2026-11-25</lastmod><priority>1.0</priority></url>
+  <url><loc>https://churchmann.org/features.html</loc><lastmod>2026-11-25</lastmod><priority>0.9</priority></url>
+  <url><loc>https://churchmann.org/pricing.html</loc><lastmod>2026-11-25</lastmod><priority>0.9</priority></url>
+  <url><loc>https://churchmann.org/church-management-software-ghana.html</loc><lastmod>2026-11-25</lastmod><priority>0.9</priority></url>
+  <url><loc>https://churchmann.org/signin.html</loc><lastmod>2026-11-25</lastmod><priority>0.7</priority></url>
+  <url><loc>https://churchmann.org/signup.html</loc><lastmod>2026-11-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://churchmann.org/faq.html</loc><lastmod>2026-11-25</lastmod><priority>0.7</priority></url>
+  <url><loc>https://churchmann.org/help.html</loc><lastmod>2026-11-25</lastmod><priority>0.6</priority></url>
+  <url><loc>https://churchmann.org/privacy.html</loc><lastmod>2026-11-25</lastmod><priority>0.3</priority></url>
+  <url><loc>https://churchmann.org/terms.html</loc><lastmod>2026-11-25</lastmod><priority>0.3</priority></url>
+  <url><loc>https://churchmann.org/church-member-management.html</loc><lastmod>2026-11-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://churchmann.org/church-giving-and-tithes.html</loc><lastmod>2026-11-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://churchmann.org/church-sms-and-email.html</loc><lastmod>2026-11-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://churchmann.org/church-attendance-tracking.html</loc><lastmod>2026-11-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://churchmann.org/church-voting-and-awards.html</loc><lastmod>2026-11-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://churchmann.org/prayer-requests.html</loc><lastmod>2026-11-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://churchmann.org/church-website-builder.html</loc><lastmod>2026-11-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://churchmann.org/multi-branch-church-management.html</loc><lastmod>2026-11-25</lastmod><priority>0.8</priority></url>
 </urlset>
